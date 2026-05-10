@@ -8,7 +8,7 @@ This repository contains a Python compliance engine for Homework 2. It reads a p
 python run_compliance_check.py --input trades.json --regimes CFTC,EMIR --product-definitions data/Product-Definitions-master/Product-Definitions-master
 ```
 
-The command writes:
+The output file is:
 
 ```text
 outputs/result.json
@@ -38,7 +38,3 @@ outputs/
 tests/
 trades.json
 ```
-
-## Next Steps
-
-- Add Module 4 classification notes for T026 to T028.
