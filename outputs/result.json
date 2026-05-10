@@ -1,0 +1,2140 @@
+{
+  "summary": {
+    "total_trades": 28,
+    "parse_status_counts": {
+      "SUCCESS": 26,
+      "PARTIAL": 2
+    },
+    "classification_counts": {
+      "CONVENTIONAL_DERIVATIVE": 25,
+      "NOVEL_INSTRUMENT_NO_TAXONOMY": 3
+    },
+    "upi_status_counts": {
+      "FOUND": 24,
+      "FOUND_WITH_VALIDATION_ERRORS": 1,
+      "NO_PRODUCT_DEFINITION": 3
+    },
+    "compliance_status_counts": {
+      "CFTC:NONCOMPLIANT": 26,
+      "EMIR:NONCOMPLIANT": 28,
+      "CFTC:PASS": 2
+    },
+    "novel_instrument_trade_ids": [
+      "T026",
+      "T027",
+      "T028"
+    ]
+  },
+  "parsed_trades": [
+    {
+      "trade_id": "T001",
+      "parse_status": "SUCCESS",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Fixed_Float",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 50000000,
+        "cleared": true,
+        "uti": "5493001KJTIIGC8Y1R1220241219TRD00001",
+        "upi": null,
+        "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
+        "other_counterparty_lei": "2138002TXD6KSZ3V5X27",
+        "execution_timestamp": "2024-12-19T09:35:00Z",
+        "effective_date": "2024-12-21",
+        "maturity_date": "2029-12-21"
+      }
+    },
+    {
+      "trade_id": "T002",
+      "parse_status": "SUCCESS",
+      "asset_class": "Credit",
+      "instrument_type": "Swap",
+      "use_case": "Corporate",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "EUR",
+        "notional_amount": 10000000,
+        "cleared": false,
+        "uti": "VGRQXHF3J8VDLUA7XE9220250115CDS0001",
+        "upi": null,
+        "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+        "other_counterparty_lei": "9695009AXSRNHZE85Y20",
+        "execution_timestamp": "2025-01-15T14:22:00Z",
+        "effective_date": "2025-01-17",
+        "maturity_date": "2030-01-17"
+      }
+    },
+    {
+      "trade_id": "T003",
+      "parse_status": "SUCCESS",
+      "asset_class": "FX",
+      "instrument_type": "Forward",
+      "use_case": "NDF",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 20000000,
+        "cleared": false,
+        "uti": "1VUV7VQFKUOQSJ21A20820250210FWD0001",
+        "upi": null,
+        "reporting_counterparty_lei": "1VUV7VQFKUOQSJ21A208",
+        "other_counterparty_lei": "4R3ZURLYISNNNMHMK608",
+        "execution_timestamp": "2025-02-10T11:00:00Z",
+        "effective_date": "2025-02-12",
+        "maturity_date": "2025-08-12"
+      }
+    },
+    {
+      "trade_id": "T004",
+      "parse_status": "SUCCESS",
+      "asset_class": "Equity",
+      "instrument_type": "Option",
+      "use_case": "SingleName_Put",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 5000000,
+        "cleared": false,
+        "uti": "5493001KJTIIGC8Y1R1220250301EQ00001",
+        "upi": null,
+        "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
+        "other_counterparty_lei": "MISSING_LEI",
+        "execution_timestamp": "2025-03-01T15:30:00Z",
+        "effective_date": "2025-03-03",
+        "maturity_date": "2025-09-19"
+      }
+    },
+    {
+      "trade_id": "T005",
+      "parse_status": "SUCCESS",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Fixed_Float",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "GBP",
+        "notional_amount": 75000000,
+        "cleared": true,
+        "uti": "2138002TXD6KSZ3V5X2720250115IRS0001",
+        "upi": null,
+        "reporting_counterparty_lei": "2138002TXD6KSZ3V5X27",
+        "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+        "execution_timestamp": "2025-01-15T09:00:00Z",
+        "effective_date": "2025-01-17",
+        "maturity_date": "2035-01-17"
+      }
+    },
+    {
+      "trade_id": "T006",
+      "parse_status": "SUCCESS",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Basis",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "EUR",
+        "notional_amount": 100000000,
+        "cleared": false,
+        "uti": null,
+        "upi": null,
+        "reporting_counterparty_lei": "9695009AXSRNHZE85Y20",
+        "other_counterparty_lei": "1VUV7VQFKUOQSJ21A208",
+        "execution_timestamp": "2025-04-01T10:15:00Z",
+        "effective_date": "2025-04-03",
+        "maturity_date": "2030-04-03"
+      }
+    },
+    {
+      "trade_id": "T007",
+      "parse_status": "SUCCESS",
+      "asset_class": "Commodities",
+      "instrument_type": "Swap",
+      "use_case": "SingleName",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "XAU",
+        "notional_amount": 5000,
+        "cleared": false,
+        "uti": "4R3ZURLYISNNNMHMK60820250506COM0001",
+        "upi": null,
+        "reporting_counterparty_lei": "4R3ZURLYISNNNMHMK608",
+        "other_counterparty_lei": "5493001KJTIIGC8Y1R12",
+        "execution_timestamp": "2025-05-06T13:45:00Z",
+        "effective_date": "2025-05-08",
+        "maturity_date": "2026-05-08"
+      }
+    },
+    {
+      "trade_id": "T008",
+      "parse_status": "SUCCESS",
+      "asset_class": "Rates",
+      "instrument_type": "Option",
+      "use_case": "Swaption",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 200000000,
+        "cleared": false,
+        "uti": "2138002TXD6KSZ3V5X2720250301SWN0001",
+        "upi": null,
+        "reporting_counterparty_lei": "2138002TXD6KSZ3V5X27",
+        "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+        "execution_timestamp": "2025-03-01T08:00:00Z",
+        "effective_date": "2025-03-03",
+        "maturity_date": "2025-09-01"
+      }
+    },
+    {
+      "trade_id": "T009",
+      "parse_status": "SUCCESS",
+      "asset_class": "FX",
+      "instrument_type": "Option",
+      "use_case": "Vanilla",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "INVALID_CCY",
+        "notional_amount": 25000000,
+        "cleared": false,
+        "uti": "1VUV7VQFKUOQSJ21A20820251010FXO0001",
+        "upi": null,
+        "reporting_counterparty_lei": "1VUV7VQFKUOQSJ21A208",
+        "other_counterparty_lei": "9695009AXSRNHZE85Y20",
+        "execution_timestamp": "2025-10-10T12:00:00Z",
+        "effective_date": "2025-10-14",
+        "maturity_date": "2026-01-14"
+      }
+    },
+    {
+      "trade_id": "T010",
+      "parse_status": "SUCCESS",
+      "asset_class": "Credit",
+      "instrument_type": "Swap",
+      "use_case": "Index",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 30000000,
+        "cleared": true,
+        "uti": "5299000J2N45DDNE4Y2820250115CDX0001",
+        "upi": null,
+        "reporting_counterparty_lei": "5299000J2N45DDNE4Y28",
+        "other_counterparty_lei": "2138002TXD6KSZ3V5X27",
+        "execution_timestamp": "2025-01-15T16:00:00Z",
+        "effective_date": "2025-01-20",
+        "maturity_date": "2030-12-20"
+      }
+    },
+    {
+      "trade_id": "T011",
+      "parse_status": "SUCCESS",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "CrossCurrency",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": null,
+        "notional_amount": null,
+        "cleared": false,
+        "uti": "VGRQXHF3J8VDLUA7XE9220250601XCS0001",
+        "upi": null,
+        "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+        "other_counterparty_lei": "4R3ZURLYISNNNMHMK608",
+        "execution_timestamp": "2025-06-01T09:30:00Z",
+        "effective_date": "2025-06-05",
+        "maturity_date": "2028-06-05"
+      }
+    },
+    {
+      "trade_id": "T012",
+      "parse_status": "SUCCESS",
+      "asset_class": "Equity",
+      "instrument_type": "Swap",
+      "use_case": "TotalReturn_SingleIndex",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 50000000,
+        "cleared": false,
+        "uti": "9695009AXSRNHZE85Y2020250715TRS0001",
+        "upi": null,
+        "reporting_counterparty_lei": "9695009AXSRNHZE85Y20",
+        "other_counterparty_lei": "5493001KJTIIGC8Y1R12",
+        "execution_timestamp": "2025-07-15T10:00:00Z",
+        "effective_date": "2025-07-17",
+        "maturity_date": "2026-07-17"
+      }
+    },
+    {
+      "trade_id": "T013",
+      "parse_status": "PARTIAL",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Inflation",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [
+        "execution_timestamp must be ISO 8601 UTC, e.g. 2025-05-10T14:22:00Z"
+      ],
+      "classified_fields": {
+        "notional_currency": "GBP",
+        "notional_amount": 25000000,
+        "cleared": false,
+        "uti": "1VUV7VQFKUOQSJ21A20820250901INF0001",
+        "upi": null,
+        "reporting_counterparty_lei": "1VUV7VQFKUOQSJ21A208",
+        "other_counterparty_lei": "5299000J2N45DDNE4Y28",
+        "execution_timestamp": "2025-09-01",
+        "effective_date": "2025-09-03",
+        "maturity_date": "2035-09-03"
+      }
+    },
+    {
+      "trade_id": "T014",
+      "parse_status": "SUCCESS",
+      "asset_class": "FX",
+      "instrument_type": "Swap",
+      "use_case": "Standard",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "AUD",
+        "notional_amount": 40000000,
+        "cleared": false,
+        "uti": "4R3ZURLYISNNNMHMK60820251120FXS0001",
+        "upi": null,
+        "reporting_counterparty_lei": "4R3ZURLYISNNNMHMK608",
+        "other_counterparty_lei": "2138002TXD6KSZ3V5X27",
+        "execution_timestamp": "2025-11-20T14:00:00Z",
+        "effective_date": "2025-11-22",
+        "maturity_date": "2026-02-22"
+      }
+    },
+    {
+      "trade_id": "T015",
+      "parse_status": "SUCCESS",
+      "asset_class": "Rates",
+      "instrument_type": "Cap_Floor",
+      "use_case": "Cap",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 150000000,
+        "cleared": false,
+        "uti": "2138002TXD6KSZ3V5X2720250801CAP0001",
+        "upi": null,
+        "reporting_counterparty_lei": "2138002TXD6KSZ3V5X27",
+        "other_counterparty_lei": "1VUV7VQFKUOQSJ21A208",
+        "execution_timestamp": "2025-08-01T11:30:00Z",
+        "effective_date": "2025-08-05",
+        "maturity_date": "2028-08-05"
+      }
+    },
+    {
+      "trade_id": "T016",
+      "parse_status": "SUCCESS",
+      "asset_class": "Equity",
+      "instrument_type": "Swap",
+      "use_case": "Variance",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "EUR",
+        "notional_amount": 15000000,
+        "cleared": false,
+        "uti": "9695009AXSRNHZE85Y202025091VARSWP01",
+        "upi": null,
+        "reporting_counterparty_lei": "9695009AXSRNHZE85Y20",
+        "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+        "execution_timestamp": "2025-09-15T13:00:00Z",
+        "effective_date": "2025-09-17",
+        "maturity_date": "2026-03-17"
+      }
+    },
+    {
+      "trade_id": "T017",
+      "parse_status": "SUCCESS",
+      "asset_class": "Credit",
+      "instrument_type": "Swap",
+      "use_case": "Sovereign",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 20000000,
+        "cleared": false,
+        "uti": "5493001KJTIIGC8Y1R1220251105SOV0001",
+        "upi": null,
+        "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
+        "other_counterparty_lei": "5299000J2N45DDNE4Y28",
+        "execution_timestamp": "2025-11-05T09:15:00Z",
+        "effective_date": "2025-11-07",
+        "maturity_date": "2030-11-07"
+      }
+    },
+    {
+      "trade_id": "T018",
+      "parse_status": "SUCCESS",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "OIS",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "EUR",
+        "notional_amount": 500000000,
+        "cleared": true,
+        "uti": "VGRQXHF3J8VDLUA7XE9220251201OIS0001",
+        "upi": null,
+        "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+        "other_counterparty_lei": "9695009AXSRNHZE85Y20",
+        "execution_timestamp": "2025-12-01T08:45:00Z",
+        "effective_date": "2025-12-03",
+        "maturity_date": "2026-06-03"
+      }
+    },
+    {
+      "trade_id": "T019",
+      "parse_status": "SUCCESS",
+      "asset_class": "Commodities",
+      "instrument_type": "Option",
+      "use_case": "SingleName",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 10000000,
+        "cleared": false,
+        "uti": "4R3ZURLYISNNNMHMK60820260115OPT0001",
+        "upi": null,
+        "reporting_counterparty_lei": "4R3ZURLYISNNNMHMK608",
+        "other_counterparty_lei": "1VUV7VQFKUOQSJ21A208",
+        "execution_timestamp": "2026-01-15T10:00:00Z",
+        "effective_date": "2026-01-17",
+        "maturity_date": "2026-07-17"
+      }
+    },
+    {
+      "trade_id": "T020",
+      "parse_status": "SUCCESS",
+      "asset_class": "FX",
+      "instrument_type": "Option",
+      "use_case": "Barrier",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 30000000,
+        "cleared": false,
+        "uti": "2138002TXD6KSZ3V5X2720260210BRR0001",
+        "upi": null,
+        "reporting_counterparty_lei": "2138002TXD6KSZ3V5X27",
+        "other_counterparty_lei": "4R3ZURLYISNNNMHMK608",
+        "execution_timestamp": "2026-02-10T15:00:00Z",
+        "effective_date": "2026-02-12",
+        "maturity_date": "2026-08-12"
+      }
+    },
+    {
+      "trade_id": "T021",
+      "parse_status": "PARTIAL",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Fixed_Float",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [
+        "maturity_date must be a valid YYYY-MM-DD date"
+      ],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 100000000,
+        "cleared": true,
+        "uti": "5493001KJTIIGC8Y1R12202603010001",
+        "upi": null,
+        "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
+        "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+        "execution_timestamp": "2026-03-01T09:00:00Z",
+        "effective_date": "2026-03-05",
+        "maturity_date": "9999-99-99"
+      }
+    },
+    {
+      "trade_id": "T022",
+      "parse_status": "SUCCESS",
+      "asset_class": "Credit",
+      "instrument_type": "Swap",
+      "use_case": "ABS",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 15000000,
+        "cleared": false,
+        "uti": "9695009AXSRNHZE85Y2020260415ABS0001",
+        "upi": null,
+        "reporting_counterparty_lei": "9695009AXSRNHZE85Y20",
+        "other_counterparty_lei": "5493001KJTIIGC8Y1R12",
+        "execution_timestamp": "2026-04-15T11:00:00Z",
+        "effective_date": "2026-04-17",
+        "maturity_date": "2031-04-17"
+      }
+    },
+    {
+      "trade_id": "T023",
+      "parse_status": "SUCCESS",
+      "asset_class": "Equity",
+      "instrument_type": "Forward",
+      "use_case": "SingleName",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "SGD",
+        "notional_amount": 8000000,
+        "cleared": false,
+        "uti": "1VUV7VQFKUOQSJ21A20820260501EQF0001",
+        "upi": null,
+        "reporting_counterparty_lei": "1VUV7VQFKUOQSJ21A208",
+        "other_counterparty_lei": "2138002TXD6KSZ3V5X27",
+        "execution_timestamp": "2026-05-01T10:30:00Z",
+        "effective_date": "2026-05-05",
+        "maturity_date": "2026-11-05"
+      }
+    },
+    {
+      "trade_id": "T024",
+      "parse_status": "SUCCESS",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Fixed_Float",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "CAD",
+        "notional_amount": 60000000,
+        "cleared": true,
+        "uti": "5299000J2N45DDNE4Y2820260601IRS9999",
+        "upi": null,
+        "reporting_counterparty_lei": "5299000J2N45DDNE4Y28",
+        "other_counterparty_lei": "4R3ZURLYISNNNMHMK608",
+        "execution_timestamp": "2026-06-01T14:00:00Z",
+        "effective_date": "2026-06-03",
+        "maturity_date": "2036-06-03"
+      }
+    },
+    {
+      "trade_id": "T025",
+      "parse_status": "SUCCESS",
+      "asset_class": "FX",
+      "instrument_type": "Forward",
+      "use_case": "Deliverable",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "EUR",
+        "notional_amount": 45000000,
+        "cleared": false,
+        "uti": "VGRQXHF3J8VDLUA7XE9220260701FXF0001",
+        "upi": null,
+        "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+        "other_counterparty_lei": "9695009AXSRNHZE85Y20",
+        "execution_timestamp": "2026-07-01T16:00:00Z",
+        "effective_date": "2026-07-03",
+        "maturity_date": "2026-10-03"
+      }
+    },
+    {
+      "trade_id": "T026",
+      "parse_status": "SUCCESS",
+      "asset_class": "EventContract",
+      "instrument_type": "BinaryEventContract",
+      "use_case": "PoliticalOutcome",
+      "classification_flag": "NOVEL_INSTRUMENT_NO_TAXONOMY",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 50000,
+        "cleared": true,
+        "uti": "5493001KJTIIGC8Y1R1220260301EVT00001",
+        "upi": null,
+        "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
+        "other_counterparty_lei": null,
+        "execution_timestamp": "2026-03-01T14:00:00Z",
+        "effective_date": null,
+        "maturity_date": null
+      }
+    },
+    {
+      "trade_id": "T027",
+      "parse_status": "SUCCESS",
+      "asset_class": "EventContract",
+      "instrument_type": "BinaryEventContract",
+      "use_case": "MacroeconomicOutcome",
+      "classification_flag": "NOVEL_INSTRUMENT_NO_TAXONOMY",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USDC",
+        "notional_amount": 200000,
+        "cleared": false,
+        "uti": null,
+        "upi": null,
+        "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+        "other_counterparty_lei": null,
+        "execution_timestamp": "2026-02-15T11:30:00Z",
+        "effective_date": null,
+        "maturity_date": null
+      }
+    },
+    {
+      "trade_id": "T028",
+      "parse_status": "SUCCESS",
+      "asset_class": "EventContract",
+      "instrument_type": "BinaryEventContract",
+      "use_case": "RegulatoryDecisionOutcome",
+      "classification_flag": "NOVEL_INSTRUMENT_NO_TAXONOMY",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 100000,
+        "cleared": true,
+        "uti": "9695009AXSRNHZE85Y2020260115REG0001",
+        "upi": null,
+        "reporting_counterparty_lei": "9695009AXSRNHZE85Y20",
+        "other_counterparty_lei": null,
+        "execution_timestamp": "2026-01-15T10:00:00Z",
+        "effective_date": null,
+        "maturity_date": null
+      }
+    }
+  ],
+  "upi_results": [
+    {
+      "trade_id": "T001",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Rates\\Rates.Swap.Fixed_Float.UPI.V1.json",
+      "matched_template": "Rates.Swap.Fixed_Float",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T002",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Credit\\Credit.Swap.Corporate.UPI.V1.json",
+      "matched_template": "Credit.Swap.Corporate",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T003",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Foreign_Exchange\\Foreign_Exchange.Forward.NDF.UPI.V1.json",
+      "matched_template": "Foreign_Exchange.Forward.NDF",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T004",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Equity\\Equity.Option.Single_Name.UPI.V1.json",
+      "matched_template": "Equity.Option.Single_Name",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": [
+        "OptionType=PUT mapped to ANNA-DSB value PUTO"
+      ]
+    },
+    {
+      "trade_id": "T005",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Rates\\Rates.Swap.Fixed_Float.UPI.V1.json",
+      "matched_template": "Rates.Swap.Fixed_Float",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": [
+        "ReferenceRate=GBP-LIBOR-BBA is historical LIBOR; kept as a warning, not a hard error"
+      ]
+    },
+    {
+      "trade_id": "T006",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Rates\\Rates.Swap.Basis.UPI.V1.json",
+      "matched_template": "Rates.Swap.Basis",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T007",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Commodities\\Commodities.Swap.Swap.UPI.V1.json",
+      "matched_template": "Commodities.Swap.Swap",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T008",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Rates\\Rates.Option.Swaption.UPI.V1.json",
+      "matched_template": "Rates.Option.Swaption",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": [
+        "OptionType=PAYER mapped to ANNA-DSB value CALL"
+      ]
+    },
+    {
+      "trade_id": "T009",
+      "status": "FOUND_WITH_VALIDATION_ERRORS",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Foreign_Exchange\\Foreign_Exchange.Option.Vanilla_Option.UPI.V1.json",
+      "matched_template": "Foreign_Exchange.Option.Vanilla_Option",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [
+        "NotionalCurrency=INVALID_CCY is not in codeset ../../codesets/ISOCurrencyCode.json"
+      ],
+      "warnings": []
+    },
+    {
+      "trade_id": "T010",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Credit\\Credit.Swap.Index.UPI.V1.json",
+      "matched_template": "Credit.Swap.Index",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T011",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Rates\\Rates.Swap.Cross_Currency_Fixed_Float.UPI.V1.json",
+      "matched_template": "Rates.Swap.Cross_Currency_Fixed_Float",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T012",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Equity\\Equity.Swap.Total_Return_Swap_Single_Index.UPI.V1.json",
+      "matched_template": "Equity.Swap.Total_Return_Swap_Single_Index",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T013",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Rates\\Rates.Swap.Inflation_Swap.UPI.V1.json",
+      "matched_template": "Rates.Swap.Inflation_Swap",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": [
+        "ReferenceRate=GBP-RPI mapped to ANNA-DSB value UK-RPI"
+      ]
+    },
+    {
+      "trade_id": "T014",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Foreign_Exchange\\Foreign_Exchange.Swap.FX_Swap.UPI.V1.json",
+      "matched_template": "Foreign_Exchange.Swap.FX_Swap",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T015",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Rates\\Rates.Option.CapFloor.UPI.V1.json",
+      "matched_template": "Rates.Option.CapFloor",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T016",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Equity\\Equity.Swap.Parameter_Return_Variance_Single_Name.UPI.V1.json",
+      "matched_template": "Equity.Swap.Parameter_Return_Variance_Single_Name",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T017",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Credit\\Credit.Swap.Sovereign.UPI.V1.json",
+      "matched_template": "Credit.Swap.Sovereign",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T018",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Rates\\Rates.Swap.Fixed_Float_OIS.UPI.V1.json",
+      "matched_template": "Rates.Swap.Fixed_Float_OIS",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": [
+        "ReferenceRate=EUR-ESTR mapped to ANNA-DSB value EUR-EuroSTR"
+      ]
+    },
+    {
+      "trade_id": "T019",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Commodities\\Commodities.Option.Option.UPI.V1.json",
+      "matched_template": "Commodities.Option.Option",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T020",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Foreign_Exchange\\Foreign_Exchange.Option.Barrier_Option.UPI.V1.json",
+      "matched_template": "Foreign_Exchange.Option.Barrier_Option",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T021",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Rates\\Rates.Swap.Fixed_Float.UPI.V1.json",
+      "matched_template": "Rates.Swap.Fixed_Float",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T022",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Credit\\Credit.Swap.ABS.UPI.V1.json",
+      "matched_template": "Credit.Swap.ABS",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T023",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Equity\\Equity.Forward.Price_Return_Basic_Performance_Single_Name.UPI.V1.json",
+      "matched_template": "Equity.Forward.Price_Return_Basic_Performance_Single_Name",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T024",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Rates\\Rates.Swap.Fixed_Float.UPI.V1.json",
+      "matched_template": "Rates.Swap.Fixed_Float",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T025",
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Foreign_Exchange\\Foreign_Exchange.Forward.Forward.UPI.V1.json",
+      "matched_template": "Foreign_Exchange.Forward.Forward",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T026",
+      "status": "NO_PRODUCT_DEFINITION",
+      "template_path": null,
+      "matched_template": null,
+      "upi_code": null,
+      "classification_note": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T027",
+      "status": "NO_PRODUCT_DEFINITION",
+      "template_path": null,
+      "matched_template": null,
+      "upi_code": null,
+      "classification_note": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T028",
+      "status": "NO_PRODUCT_DEFINITION",
+      "template_path": null,
+      "matched_template": null,
+      "upi_code": null,
+      "classification_note": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
+      "validation_errors": [],
+      "warnings": []
+    }
+  ],
+  "compliance_results": [
+    {
+      "trade_id": "T001",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T001",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T002",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T002",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T003",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T003",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T004",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=MISSING_LEI is not a valid LEI: The number has an invalid format.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T004",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=MISSING_LEI is not a valid LEI: The number has an invalid format.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T005",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T005",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T006",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "uti is required for CFTC.",
+          "field": "uti"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "MISSING_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "UTI is missing.",
+          "field": "uti"
+        }
+      ]
+    },
+    {
+      "trade_id": "T006",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "uti is required for EMIR.",
+          "field": "uti"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "MISSING_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "UTI is missing.",
+          "field": "uti"
+        }
+      ]
+    },
+    {
+      "trade_id": "T007",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T007",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T008",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T008",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T009",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "INVALID_CURRENCY",
+          "severity": "NONCOMPLIANT",
+          "message": "INVALID_CCY is not a valid ISO 4217 currency code.",
+          "field": "notional_currency"
+        },
+        {
+          "code": "UPI_ATTRIBUTE_VALIDATION_ERROR",
+          "severity": "NONCOMPLIANT",
+          "message": "NotionalCurrency=INVALID_CCY is not in codeset ../../codesets/ISOCurrencyCode.json",
+          "field": "upi"
+        }
+      ]
+    },
+    {
+      "trade_id": "T009",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "INVALID_CURRENCY",
+          "severity": "NONCOMPLIANT",
+          "message": "INVALID_CCY is not a valid ISO 4217 currency code.",
+          "field": "notional_currency"
+        },
+        {
+          "code": "UPI_ATTRIBUTE_VALIDATION_ERROR",
+          "severity": "NONCOMPLIANT",
+          "message": "NotionalCurrency=INVALID_CCY is not in codeset ../../codesets/ISOCurrencyCode.json",
+          "field": "upi"
+        }
+      ]
+    },
+    {
+      "trade_id": "T010",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T010",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T011",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T011",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T012",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T012",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T013",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_TIMESTAMP",
+          "severity": "NONCOMPLIANT",
+          "message": "execution_timestamp must be ISO 8601 UTC, e.g. 2025-01-15T14:22:00Z.",
+          "field": "execution_timestamp"
+        }
+      ]
+    },
+    {
+      "trade_id": "T013",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_TIMESTAMP",
+          "severity": "NONCOMPLIANT",
+          "message": "execution_timestamp must be ISO 8601 UTC, e.g. 2025-01-15T14:22:00Z.",
+          "field": "execution_timestamp"
+        }
+      ]
+    },
+    {
+      "trade_id": "T014",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T014",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T015",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T015",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T016",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T016",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T017",
+      "regime": "CFTC",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "trade_id": "T017",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        }
+      ]
+    },
+    {
+      "trade_id": "T018",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T018",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T019",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T019",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T020",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T020",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T021",
+      "regime": "CFTC",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "trade_id": "T021",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        }
+      ]
+    },
+    {
+      "trade_id": "T022",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T022",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T023",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T023",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T024",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T024",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T025",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T025",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "other_counterparty_lei"
+        }
+      ]
+    },
+    {
+      "trade_id": "T026",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei is required for CFTC.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "MISSING_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei is missing.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "NO_PRODUCT_DEFINITION",
+          "severity": "WARNING",
+          "message": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
+          "field": "upi"
+        },
+        {
+          "code": "EVENT_CONTRACT_CFTC_CONDITIONAL",
+          "severity": "WARNING",
+          "message": "Kalshi event contract is treated as conditional CFTC scope for the written analysis.",
+          "field": "asset_class"
+        }
+      ]
+    },
+    {
+      "trade_id": "T026",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei is required for EMIR.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "MISSING_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei is missing.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "NO_PRODUCT_DEFINITION",
+          "severity": "WARNING",
+          "message": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
+          "field": "upi"
+        },
+        {
+          "code": "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
+          "severity": "WARNING",
+          "message": "EventContract is outside EMIR OTC derivative taxonomy in this project.",
+          "field": "asset_class"
+        }
+      ]
+    },
+    {
+      "trade_id": "T027",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "uti is required for CFTC.",
+          "field": "uti"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei is required for CFTC.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "MISSING_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei is missing.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "MISSING_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "UTI is missing.",
+          "field": "uti"
+        },
+        {
+          "code": "INVALID_CURRENCY",
+          "severity": "NONCOMPLIANT",
+          "message": "USDC is not a valid ISO 4217 currency code.",
+          "field": "notional_currency"
+        },
+        {
+          "code": "NO_PRODUCT_DEFINITION",
+          "severity": "WARNING",
+          "message": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
+          "field": "upi"
+        },
+        {
+          "code": "EVENT_CONTRACT_CFTC_NOT_APPLICABLE",
+          "severity": "WARNING",
+          "message": "Non-DCM event contract is treated as not applicable for CFTC OTC reporting.",
+          "field": "asset_class"
+        }
+      ]
+    },
+    {
+      "trade_id": "T027",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "uti is required for EMIR.",
+          "field": "uti"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei is required for EMIR.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "MISSING_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei is missing.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "MISSING_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "UTI is missing.",
+          "field": "uti"
+        },
+        {
+          "code": "INVALID_CURRENCY",
+          "severity": "NONCOMPLIANT",
+          "message": "USDC is not a valid ISO 4217 currency code.",
+          "field": "notional_currency"
+        },
+        {
+          "code": "NO_PRODUCT_DEFINITION",
+          "severity": "WARNING",
+          "message": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
+          "field": "upi"
+        },
+        {
+          "code": "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
+          "severity": "WARNING",
+          "message": "EventContract is outside EMIR OTC derivative taxonomy in this project.",
+          "field": "asset_class"
+        }
+      ]
+    },
+    {
+      "trade_id": "T028",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei is required for CFTC.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "MISSING_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei is missing.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "NO_PRODUCT_DEFINITION",
+          "severity": "WARNING",
+          "message": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
+          "field": "upi"
+        },
+        {
+          "code": "EVENT_CONTRACT_CFTC_CONDITIONAL",
+          "severity": "WARNING",
+          "message": "Kalshi event contract is treated as conditional CFTC scope for the written analysis.",
+          "field": "asset_class"
+        }
+      ]
+    },
+    {
+      "trade_id": "T028",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei is required for EMIR.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "MISSING_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "other_counterparty_lei is missing.",
+          "field": "other_counterparty_lei"
+        },
+        {
+          "code": "NO_PRODUCT_DEFINITION",
+          "severity": "WARNING",
+          "message": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
+          "field": "upi"
+        },
+        {
+          "code": "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
+          "severity": "WARNING",
+          "message": "EventContract is outside EMIR OTC derivative taxonomy in this project.",
+          "field": "asset_class"
+        }
+      ]
+    }
+  ],
+  "regimes": [
+    "CFTC",
+    "EMIR"
+  ]
+}
