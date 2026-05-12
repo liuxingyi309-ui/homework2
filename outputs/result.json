@@ -15,9 +15,12 @@
       "NO_PRODUCT_DEFINITION": 3
     },
     "compliance_status_counts": {
-      "CFTC:NONCOMPLIANT": 26,
-      "EMIR:NONCOMPLIANT": 28,
-      "CFTC:PASS": 2
+      "CFTC:NONCOMPLIANT": 23,
+      "EMIR:NONCOMPLIANT": 25,
+      "CFTC:COMPLIANT": 2,
+      "CFTC:CONDITIONAL": 2,
+      "EMIR:NOT_APPLICABLE": 3,
+      "CFTC:NOT_APPLICABLE": 1
     },
     "novel_instrument_trade_ids": [
       "T026",
@@ -922,7 +925,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -935,7 +938,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -948,7 +951,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -961,7 +964,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -974,7 +977,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -1005,7 +1008,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -1018,8 +1021,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=MISSING_LEI is not a valid LEI: The number has an invalid format.",
+          "message": "other_counterparty_lei: LEI must be exactly 20 characters",
           "field": "other_counterparty_lei"
+        },
+        {
+          "code": "UPI_WARNING",
+          "severity": "WARNING",
+          "message": "OptionType=PUT mapped to ANNA-DSB value PUTO",
+          "field": "upi"
         }
       ]
     },
@@ -1049,8 +1058,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=MISSING_LEI is not a valid LEI: The number has an invalid format.",
+          "message": "other_counterparty_lei: LEI must be exactly 20 characters",
           "field": "other_counterparty_lei"
+        },
+        {
+          "code": "UPI_WARNING",
+          "severity": "WARNING",
+          "message": "OptionType=PUT mapped to ANNA-DSB value PUTO",
+          "field": "upi"
         }
       ]
     },
@@ -1062,8 +1077,20 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
+        },
+        {
+          "code": "UPI_WARNING",
+          "severity": "WARNING",
+          "message": "ReferenceRate=GBP-LIBOR-BBA is historical LIBOR; kept as a warning, not a hard error",
+          "field": "upi"
         }
       ]
     },
@@ -1075,8 +1102,20 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
+        },
+        {
+          "code": "UPI_WARNING",
+          "severity": "WARNING",
+          "message": "ReferenceRate=GBP-LIBOR-BBA is historical LIBOR; kept as a warning, not a hard error",
+          "field": "upi"
         }
       ]
     },
@@ -1086,83 +1125,21 @@
       "status": "NONCOMPLIANT",
       "findings": [
         {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "uti is required for CFTC.",
-          "field": "uti"
-        },
-        {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
         },
         {
           "code": "MISSING_UTI",
           "severity": "NONCOMPLIANT",
-          "message": "UTI is missing.",
+          "message": "Missing UTI",
           "field": "uti"
         }
       ]
     },
     {
       "trade_id": "T006",
-      "regime": "EMIR",
-      "status": "NONCOMPLIANT",
-      "findings": [
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "uti is required for EMIR.",
-          "field": "uti"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "collateral_portfolio_code is required for EMIR.",
-          "field": "collateral_portfolio_code"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "initial_margin_posted is required for EMIR.",
-          "field": "initial_margin_posted"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "variation_margin_posted is required for EMIR.",
-          "field": "variation_margin_posted"
-        },
-        {
-          "code": "INVALID_LEI",
-          "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
-          "field": "reporting_counterparty_lei"
-        },
-        {
-          "code": "MISSING_UTI",
-          "severity": "NONCOMPLIANT",
-          "message": "UTI is missing.",
-          "field": "uti"
-        }
-      ]
-    },
-    {
-      "trade_id": "T007",
-      "regime": "CFTC",
-      "status": "NONCOMPLIANT",
-      "findings": [
-        {
-          "code": "INVALID_LEI",
-          "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
-          "field": "reporting_counterparty_lei"
-        }
-      ]
-    },
-    {
-      "trade_id": "T007",
       "regime": "EMIR",
       "status": "NONCOMPLIANT",
       "findings": [
@@ -1187,8 +1164,70 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "MISSING_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Missing UTI",
+          "field": "uti"
+        }
+      ]
+    },
+    {
+      "trade_id": "T007",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
+        }
+      ]
+    },
+    {
+      "trade_id": "T007",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_REQUIRED_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        },
+        {
+          "code": "INVALID_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1200,8 +1239,20 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
+        },
+        {
+          "code": "UPI_WARNING",
+          "severity": "WARNING",
+          "message": "OptionType=PAYER mapped to ANNA-DSB value CALL",
+          "field": "upi"
         }
       ]
     },
@@ -1213,8 +1264,20 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
+        },
+        {
+          "code": "UPI_WARNING",
+          "severity": "WARNING",
+          "message": "OptionType=PAYER mapped to ANNA-DSB value CALL",
+          "field": "upi"
         }
       ]
     },
@@ -1226,7 +1289,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         },
         {
@@ -1269,7 +1332,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         },
         {
@@ -1294,7 +1357,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -1307,7 +1370,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -1320,7 +1383,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -1333,7 +1396,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -1346,8 +1409,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1359,8 +1428,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1374,6 +1449,12 @@
           "severity": "NONCOMPLIANT",
           "message": "execution_timestamp must be ISO 8601 UTC, e.g. 2025-01-15T14:22:00Z.",
           "field": "execution_timestamp"
+        },
+        {
+          "code": "UPI_WARNING",
+          "severity": "WARNING",
+          "message": "ReferenceRate=GBP-RPI mapped to ANNA-DSB value UK-RPI",
+          "field": "upi"
         }
       ]
     },
@@ -1387,6 +1468,12 @@
           "severity": "NONCOMPLIANT",
           "message": "execution_timestamp must be ISO 8601 UTC, e.g. 2025-01-15T14:22:00Z.",
           "field": "execution_timestamp"
+        },
+        {
+          "code": "UPI_WARNING",
+          "severity": "WARNING",
+          "message": "ReferenceRate=GBP-RPI mapped to ANNA-DSB value UK-RPI",
+          "field": "upi"
         }
       ]
     },
@@ -1398,14 +1485,20 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
         },
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1435,14 +1528,20 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
         },
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1454,8 +1553,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1467,8 +1572,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1480,8 +1591,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1511,15 +1628,21 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
     {
       "trade_id": "T017",
       "regime": "CFTC",
-      "status": "PASS",
+      "status": "COMPLIANT",
       "findings": []
     },
     {
@@ -1555,8 +1678,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
+        },
+        {
+          "code": "UPI_WARNING",
+          "severity": "WARNING",
+          "message": "ReferenceRate=EUR-ESTR mapped to ANNA-DSB value EUR-EuroSTR",
+          "field": "upi"
         }
       ]
     },
@@ -1568,8 +1697,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
+        },
+        {
+          "code": "UPI_WARNING",
+          "severity": "WARNING",
+          "message": "ReferenceRate=EUR-ESTR mapped to ANNA-DSB value EUR-EuroSTR",
+          "field": "upi"
         }
       ]
     },
@@ -1581,8 +1716,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1612,8 +1753,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1625,14 +1772,20 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
         },
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1662,21 +1815,27 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
         },
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
     {
       "trade_id": "T021",
       "regime": "CFTC",
-      "status": "PASS",
+      "status": "COMPLIANT",
       "findings": []
     },
     {
@@ -1712,8 +1871,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1725,8 +1890,14 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "INVALID_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
+          "field": "uti"
         }
       ]
     },
@@ -1738,7 +1909,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -1769,7 +1940,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=2138002TXD6KSZ3V5X27 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -1782,7 +1953,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -1795,7 +1966,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=4R3ZURLYISNNNMHMK608 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -1808,7 +1979,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -1839,7 +2010,7 @@
         {
           "code": "INVALID_LEI",
           "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
+          "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "other_counterparty_lei"
         }
       ]
@@ -1847,30 +2018,12 @@
     {
       "trade_id": "T026",
       "regime": "CFTC",
-      "status": "NONCOMPLIANT",
+      "status": "CONDITIONAL",
       "findings": [
         {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei is required for CFTC.",
-          "field": "other_counterparty_lei"
-        },
-        {
-          "code": "MISSING_LEI",
-          "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei is missing.",
-          "field": "other_counterparty_lei"
-        },
-        {
-          "code": "NO_PRODUCT_DEFINITION",
-          "severity": "WARNING",
-          "message": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
-          "field": "upi"
-        },
-        {
           "code": "EVENT_CONTRACT_CFTC_CONDITIONAL",
-          "severity": "WARNING",
-          "message": "Kalshi event contract is treated as conditional CFTC scope for the written analysis.",
+          "severity": "INFO",
+          "message": "EventContract on a CFTC-regulated DCM is treated as conditional scope pending classification.",
           "field": "asset_class"
         }
       ]
@@ -1878,48 +2031,12 @@
     {
       "trade_id": "T026",
       "regime": "EMIR",
-      "status": "NONCOMPLIANT",
+      "status": "NOT_APPLICABLE",
       "findings": [
         {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei is required for EMIR.",
-          "field": "other_counterparty_lei"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "collateral_portfolio_code is required for EMIR.",
-          "field": "collateral_portfolio_code"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "initial_margin_posted is required for EMIR.",
-          "field": "initial_margin_posted"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "variation_margin_posted is required for EMIR.",
-          "field": "variation_margin_posted"
-        },
-        {
-          "code": "MISSING_LEI",
-          "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei is missing.",
-          "field": "other_counterparty_lei"
-        },
-        {
-          "code": "NO_PRODUCT_DEFINITION",
-          "severity": "WARNING",
-          "message": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
-          "field": "upi"
-        },
-        {
           "code": "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
-          "severity": "WARNING",
-          "message": "EventContract is outside EMIR OTC derivative taxonomy in this project.",
+          "severity": "INFO",
+          "message": "EventContract is outside the EMIR OTC derivative reporting taxonomy in this project.",
           "field": "asset_class"
         }
       ]
@@ -1927,48 +2044,12 @@
     {
       "trade_id": "T027",
       "regime": "CFTC",
-      "status": "NONCOMPLIANT",
+      "status": "NOT_APPLICABLE",
       "findings": [
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "uti is required for CFTC.",
-          "field": "uti"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei is required for CFTC.",
-          "field": "other_counterparty_lei"
-        },
-        {
-          "code": "MISSING_LEI",
-          "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei is missing.",
-          "field": "other_counterparty_lei"
-        },
-        {
-          "code": "MISSING_UTI",
-          "severity": "NONCOMPLIANT",
-          "message": "UTI is missing.",
-          "field": "uti"
-        },
-        {
-          "code": "INVALID_CURRENCY",
-          "severity": "NONCOMPLIANT",
-          "message": "USDC is not a valid ISO 4217 currency code.",
-          "field": "notional_currency"
-        },
-        {
-          "code": "NO_PRODUCT_DEFINITION",
-          "severity": "WARNING",
-          "message": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
-          "field": "upi"
-        },
         {
           "code": "EVENT_CONTRACT_CFTC_NOT_APPLICABLE",
-          "severity": "WARNING",
-          "message": "Non-DCM event contract is treated as not applicable for CFTC OTC reporting.",
+          "severity": "INFO",
+          "message": "EventContract is not traded on a CFTC-regulated DCM and is outside CFTC OTC reporting for this project.",
           "field": "asset_class"
         }
       ]
@@ -1976,66 +2057,12 @@
     {
       "trade_id": "T027",
       "regime": "EMIR",
-      "status": "NONCOMPLIANT",
+      "status": "NOT_APPLICABLE",
       "findings": [
         {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "uti is required for EMIR.",
-          "field": "uti"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei is required for EMIR.",
-          "field": "other_counterparty_lei"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "collateral_portfolio_code is required for EMIR.",
-          "field": "collateral_portfolio_code"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "initial_margin_posted is required for EMIR.",
-          "field": "initial_margin_posted"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "variation_margin_posted is required for EMIR.",
-          "field": "variation_margin_posted"
-        },
-        {
-          "code": "MISSING_LEI",
-          "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei is missing.",
-          "field": "other_counterparty_lei"
-        },
-        {
-          "code": "MISSING_UTI",
-          "severity": "NONCOMPLIANT",
-          "message": "UTI is missing.",
-          "field": "uti"
-        },
-        {
-          "code": "INVALID_CURRENCY",
-          "severity": "NONCOMPLIANT",
-          "message": "USDC is not a valid ISO 4217 currency code.",
-          "field": "notional_currency"
-        },
-        {
-          "code": "NO_PRODUCT_DEFINITION",
-          "severity": "WARNING",
-          "message": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
-          "field": "upi"
-        },
-        {
           "code": "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
-          "severity": "WARNING",
-          "message": "EventContract is outside EMIR OTC derivative taxonomy in this project.",
+          "severity": "INFO",
+          "message": "EventContract is outside the EMIR OTC derivative reporting taxonomy in this project.",
           "field": "asset_class"
         }
       ]
@@ -2043,36 +2070,12 @@
     {
       "trade_id": "T028",
       "regime": "CFTC",
-      "status": "NONCOMPLIANT",
+      "status": "CONDITIONAL",
       "findings": [
         {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei is required for CFTC.",
-          "field": "other_counterparty_lei"
-        },
-        {
-          "code": "INVALID_LEI",
-          "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
-          "field": "reporting_counterparty_lei"
-        },
-        {
-          "code": "MISSING_LEI",
-          "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei is missing.",
-          "field": "other_counterparty_lei"
-        },
-        {
-          "code": "NO_PRODUCT_DEFINITION",
-          "severity": "WARNING",
-          "message": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
-          "field": "upi"
-        },
-        {
           "code": "EVENT_CONTRACT_CFTC_CONDITIONAL",
-          "severity": "WARNING",
-          "message": "Kalshi event contract is treated as conditional CFTC scope for the written analysis.",
+          "severity": "INFO",
+          "message": "EventContract on a CFTC-regulated DCM is treated as conditional scope pending classification.",
           "field": "asset_class"
         }
       ]
@@ -2080,54 +2083,12 @@
     {
       "trade_id": "T028",
       "regime": "EMIR",
-      "status": "NONCOMPLIANT",
+      "status": "NOT_APPLICABLE",
       "findings": [
         {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei is required for EMIR.",
-          "field": "other_counterparty_lei"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "collateral_portfolio_code is required for EMIR.",
-          "field": "collateral_portfolio_code"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "initial_margin_posted is required for EMIR.",
-          "field": "initial_margin_posted"
-        },
-        {
-          "code": "MISSING_REQUIRED_FIELD",
-          "severity": "NONCOMPLIANT",
-          "message": "variation_margin_posted is required for EMIR.",
-          "field": "variation_margin_posted"
-        },
-        {
-          "code": "INVALID_LEI",
-          "severity": "NONCOMPLIANT",
-          "message": "reporting_counterparty_lei=9695009AXSRNHZE85Y20 is not a valid LEI: The number's checksum or check digit is invalid.",
-          "field": "reporting_counterparty_lei"
-        },
-        {
-          "code": "MISSING_LEI",
-          "severity": "NONCOMPLIANT",
-          "message": "other_counterparty_lei is missing.",
-          "field": "other_counterparty_lei"
-        },
-        {
-          "code": "NO_PRODUCT_DEFINITION",
-          "severity": "WARNING",
-          "message": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
-          "field": "upi"
-        },
-        {
           "code": "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
-          "severity": "WARNING",
-          "message": "EventContract is outside EMIR OTC derivative taxonomy in this project.",
+          "severity": "INFO",
+          "message": "EventContract is outside the EMIR OTC derivative reporting taxonomy in this project.",
           "field": "asset_class"
         }
       ]
