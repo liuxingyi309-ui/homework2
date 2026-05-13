@@ -479,7 +479,7 @@ def check_cftc_compliance(parsed_trade: Any, upi_result: Dict[str, Any], raw_tra
                     _finding(
                         "EVENT_CONTRACT_CFTC_CONDITIONAL",
                         "INFO",
-                        "EventContract on a CFTC-regulated DCM is treated as conditional scope pending classification.",
+                        "EventContract has no ANNA-DSB OTC UPI product definition; because it is traded on a CFTC-regulated DCM, CFTC treatment is CONDITIONAL pending classification.",
                         "asset_class",
                     )
                 ],
@@ -493,7 +493,7 @@ def check_cftc_compliance(parsed_trade: Any, upi_result: Dict[str, Any], raw_tra
                 _finding(
                     "EVENT_CONTRACT_CFTC_NOT_APPLICABLE",
                     "INFO",
-                    "EventContract is not traded on a CFTC-regulated DCM and is outside CFTC OTC reporting for this project.",
+                    "EventContract has no ANNA-DSB OTC UPI product definition; because it is not traded on a CFTC-regulated DCM, CFTC OTC reporting is NOT_APPLICABLE in this project.",
                     "asset_class",
                 )
             ],
@@ -519,7 +519,7 @@ def check_emir_compliance(parsed_trade: Any, upi_result: Dict[str, Any], raw_tra
                 _finding(
                     "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
                     "INFO",
-                    "EventContract is outside the EMIR OTC derivative reporting taxonomy in this project.",
+                    "EventContract is treated as outside EMIR OTC derivative reporting scope due to gambling classification under European national frameworks; normal EMIR field validation is not applied.",
                     "asset_class",
                 )
             ],
