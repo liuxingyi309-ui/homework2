@@ -2023,7 +2023,7 @@
         {
           "code": "EVENT_CONTRACT_CFTC_CONDITIONAL",
           "severity": "INFO",
-          "message": "EventContract on a CFTC-regulated DCM is treated as conditional scope pending classification.",
+          "message": "EventContract has no ANNA-DSB OTC UPI product definition; because it is traded on a CFTC-regulated DCM, CFTC treatment is CONDITIONAL pending classification.",
           "field": "asset_class"
         }
       ]
@@ -2036,7 +2036,7 @@
         {
           "code": "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
           "severity": "INFO",
-          "message": "EventContract is outside the EMIR OTC derivative reporting taxonomy in this project.",
+          "message": "EventContract is treated as outside EMIR OTC derivative reporting scope due to gambling classification under European national frameworks; normal EMIR field validation is not applied.",
           "field": "asset_class"
         }
       ]
@@ -2049,7 +2049,7 @@
         {
           "code": "EVENT_CONTRACT_CFTC_NOT_APPLICABLE",
           "severity": "INFO",
-          "message": "EventContract is not traded on a CFTC-regulated DCM and is outside CFTC OTC reporting for this project.",
+          "message": "EventContract has no ANNA-DSB OTC UPI product definition; because it is not traded on a CFTC-regulated DCM, CFTC OTC reporting is NOT_APPLICABLE in this project.",
           "field": "asset_class"
         }
       ]
@@ -2062,7 +2062,7 @@
         {
           "code": "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
           "severity": "INFO",
-          "message": "EventContract is outside the EMIR OTC derivative reporting taxonomy in this project.",
+          "message": "EventContract is treated as outside EMIR OTC derivative reporting scope due to gambling classification under European national frameworks; normal EMIR field validation is not applied.",
           "field": "asset_class"
         }
       ]
@@ -2075,7 +2075,7 @@
         {
           "code": "EVENT_CONTRACT_CFTC_CONDITIONAL",
           "severity": "INFO",
-          "message": "EventContract on a CFTC-regulated DCM is treated as conditional scope pending classification.",
+          "message": "EventContract has no ANNA-DSB OTC UPI product definition; because it is traded on a CFTC-regulated DCM, CFTC treatment is CONDITIONAL pending classification.",
           "field": "asset_class"
         }
       ]
@@ -2088,7 +2088,7 @@
         {
           "code": "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
           "severity": "INFO",
-          "message": "EventContract is outside the EMIR OTC derivative reporting taxonomy in this project.",
+          "message": "EventContract is treated as outside EMIR OTC derivative reporting scope due to gambling classification under European national frameworks; normal EMIR field validation is not applied.",
           "field": "asset_class"
         }
       ]
