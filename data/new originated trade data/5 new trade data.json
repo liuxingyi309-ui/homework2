@@ -1,0 +1,308 @@
+{
+  "parsed_trades": [
+    {
+      "trade_id": "T029",
+      "parse_status": "SUCCESS",
+      "asset_class": "EventContract",
+      "instrument_type": "BinaryEventContract",
+      "use_case": "ElectionOutcome",
+      "classification_flag": "NOVEL_INSTRUMENT_NO_TAXONOMY",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 80000,
+        "cleared": true,
+        "uti": "5493001KJTIIGC8Y1R1220260501EVT00029",
+        "upi": null,
+        "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
+        "other_counterparty_lei": null,
+        "execution_timestamp": "2026-05-01T10:00:00Z",
+        "effective_date": null,
+        "maturity_date": null
+      }
+    },
+    {
+      "trade_id": "T030",
+      "parse_status": "SUCCESS",
+      "asset_class": "EventContract",
+      "instrument_type": "BinaryEventContract",
+      "use_case": "RegulatoryCondition",
+      "classification_flag": "NOVEL_INSTRUMENT_NO_TAXONOMY",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 120000,
+        "cleared": false,
+        "uti": null,
+        "upi": null,
+        "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+        "other_counterparty_lei": null,
+        "execution_timestamp": "2026-05-02T11:00:00Z",
+        "effective_date": null,
+        "maturity_date": null
+      }
+    },
+    {
+      "trade_id": "T031",
+      "parse_status": "PARTIAL",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Fixed_Float",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [
+        "Missing required field: reporting_counterparty_lei",
+        "Missing required field: uti"
+      ],
+      "classified_fields": {
+        "notional_currency": "EUR",
+        "notional_amount": 75000000,
+        "cleared": true,
+        "uti": null,
+        "upi": null,
+        "reporting_counterparty_lei": null,
+        "other_counterparty_lei": "9695009AXSRNHZE85Y20",
+        "execution_timestamp": "2026-05-03T09:30:00Z",
+        "effective_date": "2026-05-05",
+        "maturity_date": "2031-05-05"
+      }
+    },
+    {
+      "trade_id": "T032",
+      "parse_status": "SUCCESS",
+      "asset_class": "Crypto",
+      "instrument_type": "Futures",
+      "use_case": "BTC-USD",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 250000,
+        "cleared": true,
+        "uti": "5299000J2N45DDNE4Y2820260504CRYP001",
+        "upi": null,
+        "reporting_counterparty_lei": "5299000J2N45DDNE4Y28",
+        "other_counterparty_lei": "2138002TXD6KSZ3V5X27",
+        "execution_timestamp": "2026-05-04T14:00:00Z",
+        "effective_date": "2026-05-06",
+        "maturity_date": "2026-11-06"
+      }
+    },
+    {
+      "trade_id": "T033",
+      "parse_status": "SUCCESS",
+      "asset_class": "Credit",
+      "instrument_type": "Swap",
+      "use_case": "Corporate",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 40000000,
+        "cleared": false,
+        "uti": "4R3ZURLYISNNNMHMK60820260505CDS002",
+        "upi": null,
+        "reporting_counterparty_lei": "4R3ZURLYISNNNMHMK608",
+        "other_counterparty_lei": "5493001KJTIIGC8Y1R12",
+        "execution_timestamp": "2026-05-05T16:00:00Z",
+        "effective_date": "2026-05-08",
+        "maturity_date": "2031-05-08"
+      }
+    }
+  ],
+  "upi_results": [
+    {
+      "trade_id": "T029",
+      "status": "NO_PRODUCT_DEFINITION",
+      "template_path": null,
+      "matched_template": null,
+      "upi_code": null,
+      "classification_note": "EventContract has no UPI taxonomy",
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T030",
+      "status": "NO_PRODUCT_DEFINITION",
+      "template_path": null,
+      "matched_template": null,
+      "upi_code": null,
+      "classification_note": "EventContract has no UPI taxonomy",
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T031",
+      "status": "FOUND",
+      "template_path": "PROD/Rates/Swap/Fixed_Float/UPI.json",
+      "matched_template": "Rates.Swap.Fixed_Float",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T032",
+      "status": "NO_PRODUCT_DEFINITION",
+      "template_path": null,
+      "matched_template": null,
+      "upi_code": null,
+      "classification_note": "Crypto derivatives not in standard taxonomy",
+      "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T033",
+      "status": "FOUND",
+      "template_path": "PROD/Credit/Swap/Corporate/UPI.json",
+      "matched_template": "Credit.Swap.Corporate",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [],
+      "warnings": []
+    }
+  ],
+  "compliance_results": [
+    {
+      "trade_id": "T029",
+      "regime": "CFTC",
+      "status": "CONDITIONAL",
+      "findings": [
+        {
+          "code": "CROSS_BORDER_CONDITIONAL",
+          "severity": "INFO",
+          "message": "Cross-border user from ASIC jurisdiction; conditional under CFTC",
+          "field": "asset_class"
+        }
+      ]
+    },
+    {
+      "trade_id": "T029",
+      "regime": "EMIR",
+      "status": "NOT_APPLICABLE",
+      "findings": [
+        {
+          "code": "EMIR_NO_APPLICABILITY",
+          "severity": "INFO",
+          "message": "EventContract outside EMIR scope",
+          "field": "asset_class"
+        }
+      ]
+    },
+    {
+      "trade_id": "T030",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "OFFSHORE_NO_DCM",
+          "severity": "NONCOMPLIANT",
+          "message": "Offshore platform not registered as CFTC DCM",
+          "field": "platform"
+        }
+      ]
+    },
+    {
+      "trade_id": "T030",
+      "regime": "EMIR",
+      "status": "NOT_APPLICABLE",
+      "findings": [
+        {
+          "code": "EMIR_NO_APPLICABILITY",
+          "severity": "INFO",
+          "message": "EventContract outside EMIR scope",
+          "field": "asset_class"
+        }
+      ]
+    },
+    {
+      "trade_id": "T031",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei is missing",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "MISSING_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "UTI is required for reporting",
+          "field": "uti"
+        }
+      ]
+    },
+    {
+      "trade_id": "T031",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei is missing",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "MISSING_MARGIN_FIELDS",
+          "severity": "NONCOMPLIANT",
+          "message": "EMIR requires initial_margin and variation_margin",
+          "field": "margin"
+        }
+      ]
+    },
+    {
+      "trade_id": "T032",
+      "regime": "CFTC",
+      "status": "COMPLIANT",
+      "findings": [
+        {
+          "code": "CRYPTO_DCM_COMPLIANT",
+          "severity": "INFO",
+          "message": "CFTC-regulated crypto derivatives platform",
+          "field": "platform"
+        }
+      ]
+    },
+    {
+      "trade_id": "T032",
+      "regime": "EMIR",
+      "status": "CONDITIONAL",
+      "findings": [
+        {
+          "code": "CRYPTO_TRANSITION_PERIOD",
+          "severity": "INFO",
+          "message": "Crypto under EMIR transition regime; conditional",
+          "field": "asset_class"
+        }
+      ]
+    },
+    {
+      "trade_id": "T033",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "CROSS_BORDER_MARGIN",
+          "severity": "NONCOMPLIANT",
+          "message": "Cross-border margin rules not satisfied",
+          "field": "margin"
+        }
+      ]
+    },
+    {
+      "trade_id": "T033",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MANDATORY_CLEARING",
+          "severity": "NONCOMPLIANT",
+          "message": "EMIR requires mandatory clearing for this product",
+          "field": "cleared"
+        }
+      ]
+    }
+  ]
+}
