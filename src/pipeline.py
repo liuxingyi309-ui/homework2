@@ -15,7 +15,7 @@ def run_pipeline(
         regimes = ["CFTC", "EMIR"]
 
     raw_trades = load_trades(input_path)
-    parsed_trades = parse_trades(raw_trades)  # Loop through all 28 trades for Module 1.
+    parsed_trades = parse_trades(raw_trades)
     upi_results = lookup_upis(raw_trades, parsed_trades, product_definitions_root)
     upi_result_dicts = [upi_result.to_dict() for upi_result in upi_results]
     compliance_results = check_compliance(raw_trades, upi_result_dicts, regimes)

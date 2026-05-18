@@ -1,4 +1,4 @@
-import json
+﻿import json
 import os
 import re
 from dataclasses import dataclass
@@ -26,14 +26,11 @@ GLEIF_LOOKUP_ENV = "ENABLE_GLEIF_LOOKUP"
 GLEIF_LEI_RECORD_URL = "https://api.gleif.org/api/v1/lei-records/{lei}"
 
 # UTI suffix comes after the 20-character LEI namespace.
-# UTI 的前 20 位是 LEI namespace，后面的部分才是 suffix。
 UTI_SUFFIX_RE = re.compile(r"^[A-Z0-9-]+$")
 
 # These required fields are not already covered by specialised validators below.
 # LEI, UTI, timestamp, currency, notional amount, and UPI each have their own
 # validation functions so their error messages stay specific.
-# 这里不重复放 LEI、UTI、timestamp、currency、notional、UPI，
-# 因为它们下面都有专门的校验函数，错误信息会更具体。
 COMMON_REQUIRED_FIELDS = [
     "effective_date",
     "maturity_or_expiry_date",
@@ -43,11 +40,13 @@ COMMON_REQUIRED_FIELDS = [
 
 CFTC_REQUIRED_FIELDS = COMMON_REQUIRED_FIELDS
 
-EMIR_REQUIRED_FIELDS = COMMON_REQUIRED_FIELDS + [
+EMIR_MARGIN_FIELDS = [
     "collateral_portfolio_code",
     "initial_margin_posted",
     "variation_margin_posted",
 ]
+
+EMIR_REQUIRED_FIELDS = COMMON_REQUIRED_FIELDS + EMIR_MARGIN_FIELDS
 
 ASSET_CLASS_REQUIRED_FIELD_GROUPS = {
     "Rates": [["reference_rate", "reference_rate_leg1", "reference_rate_leg2", "strike_rate"]],
@@ -58,7 +57,24 @@ ASSET_CLASS_REQUIRED_FIELD_GROUPS = {
     "EventContract": [["event_type"], ["platform"]],
 }
 
+OFFSHORE_EVENT_RISK_FACTORS = {
+    "platform_type": {
+        "DECENTRALISED_BLOCKCHAIN_PLATFORM": "decentralised blockchain platform",
+    },
+    "platform_jurisdiction": {
+        "OFFSHORE_UNREGULATED": "offshore unregulated platform jurisdiction",
+    },
+    "access_method": {
+        "VPN_BYPASS_GGL_BLOCK": "VPN bypass of geo-blocking",
+    },
+    "notional_currency": {
+        "USDC": "USDC settlement",
+        "USDT": "USDT settlement",
+        "DAI": "DAI settlement",
+    },
+}
 
+# GLEIF lookup.
 @dataclass
 class GleifLookupResult:
     lei: str
@@ -68,20 +84,16 @@ class GleifLookupResult:
     legal_name: Optional[str] = None
     error: Optional[str] = None
 
-
+# Small helpers used by the validation pipeline.
 def _finding(code: str, severity: str, message: str, field: str = None) -> ComplianceFinding:
     return ComplianceFinding(code=code, severity=severity, message=message, field=field)
 
-
 def _is_missing(value: Any) -> bool:
-    return value is None or value == ""
-
+    return value is None or (isinstance(value, str) and value.strip() == "")
 
 def _trade_value(raw_trade: Dict[str, Any], field: str) -> Any:
     # Some asset classes use leg-specific field names; this keeps validators
     # focused on the regulatory concept rather than every raw JSON variant.
-    # 有些交易字段会写成 leg1/leg2，例如 notional_currency_leg1。
-    # 这个函数统一取值，避免每个校验函数都重复处理字段变体。
     if field == "notional_currency":
         return raw_trade.get("notional_currency") or raw_trade.get("notional_currency_leg1")
     if field == "notional_amount":
@@ -91,12 +103,131 @@ def _trade_value(raw_trade: Dict[str, Any], field: str) -> Any:
     return raw_trade.get(field)
 
 
+
+def _lei_error_code(error_message: str) -> str:
+    if error_message == "Missing LEI":
+        return "MISSING_LEI"
+    if "exactly 20 characters" in error_message:
+        return "INVALID_LEI_LENGTH"
+    if "checksum" in error_message or "check digit" in error_message:
+        return "INVALID_LEI_CHECK_DIGIT"
+    return "INVALID_LEI_FORMAT"
+
+
+def _uti_error_code(error_message: str) -> str:
+    if error_message == "Missing UTI":
+        return "MISSING_UTI"
+    if "must not exceed" in error_message:
+        return "UTI_TOO_LONG"
+    if "namespace LEI" in error_message and "Invalid" in error_message:
+        return "UTI_NAMESPACE_LEI_INVALID"
+    if "namespace LEI must match" in error_message:
+        return "UTI_NAMESPACE_MISMATCH"
+    if "suffix" in error_message:
+        return "UTI_SUFFIX_INVALID"
+    return "INVALID_UTI"
+
+
+def _upi_warning_code(warning: str) -> str:
+    if "historical LIBOR" in warning:
+        return "HISTORICAL_REFERENCE_RATE_WARNING"
+    if "mapped to ANNA-DSB value" in warning:
+        return "VALUE_NORMALISED_TO_DSB_CODESET"
+    return "UPI_WARNING"
+
+
+def _upi_attribute_error_code(message: str) -> str:
+    if "not in codeset" in message:
+        return "INVALID_UPI_CODESET_VALUE"
+    if "not one of" in message:
+        return "INVALID_UPI_ENUM_VALUE"
+    return "UPI_ATTRIBUTE_VALIDATION_ERROR"
+
+
+def _required_field_code(field: str, regime: str) -> str:
+    if regime == "EMIR" and field in EMIR_MARGIN_FIELDS:
+        return "MISSING_EMIR_MARGIN_FIELD"
+    if field == "maturity_or_expiry_date":
+        return "MISSING_MATURITY_OR_EXPIRY_DATE"
+    return f"MISSING_{field.upper()}"
+
+
+def validate_uti(uti: Optional[str], reporting_lei: Optional[str]) -> tuple[bool, str]:
+    """
+    Validate a UTI under ISO 23897-style rules used in the assignment.
+
+    Rules: max 52 chars, first 20 chars are a valid LEI namespace, namespace
+    equals the reporting counterparty LEI, and suffix is uppercase
+    alphanumeric/hyphen only.
+    """
+    if _is_missing(uti):
+        return False, "Missing UTI"
+
+    value = str(uti).strip()
+    if len(value) > 52:
+        return False, "UTI must not exceed 52 characters"
+    if len(value) <= 20:
+        return False, "UTI must contain a 20-character LEI namespace and a suffix"
+
+    namespace = value[:20]
+    suffix = value[20:]
+
+    namespace_valid, namespace_error = validate_lei(namespace)
+    if not namespace_valid:
+        return False, f"Invalid UTI namespace LEI: {namespace_error}"
+
+    if _is_missing(reporting_lei):
+        return False, "Cannot validate UTI namespace without reporting counterparty LEI"
+    if namespace != str(reporting_lei).strip():
+        return False, "UTI namespace LEI must match reporting counterparty LEI"
+
+    if not UTI_SUFFIX_RE.match(suffix):
+        return False, "UTI suffix must contain only A-Z, 0-9, and hyphen"
+
+    return True, ""
+
+def validate_trade_uti(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
+    # A valid UTI must be anchored to the reporting counterparty LEI.
+    is_valid, error_message = validate_uti(
+        raw_trade.get("uti"),
+        raw_trade.get("reporting_counterparty_lei"),
+    )
+    if is_valid:
+        return []
+
+    return [_finding(_uti_error_code(error_message), NONCOMPLIANT, error_message, "uti")]
+
+def validate_upi(raw_trade: Dict[str, Any], upi_result: Dict[str, Any]) -> List[ComplianceFinding]:
+    # For conventional derivatives, no product definition is a hard reporting
+    # problem. Event contracts never reach this function because they are
+    # scoped before normal OTC validation.
+    if not upi_result:
+        return [_finding("MISSING_UPI_LOOKUP_RESULT", NONCOMPLIANT, "UPI lookup result is missing.", "upi")]
+
+    warnings = [
+        _finding(_upi_warning_code(warning), "WARNING", warning, "upi")
+        for warning in upi_result.get("warnings", [])
+    ]
+
+    if upi_result.get("status") == "FOUND":
+        return warnings
+
+    if upi_result.get("status") == "NO_PRODUCT_DEFINITION":
+        return [_finding("NO_PRODUCT_DEFINITION", NONCOMPLIANT, upi_result.get("classification_note") or "No UPI product definition.", "upi")]
+
+    if upi_result.get("status") == "FOUND_WITH_VALIDATION_ERRORS":
+        return [
+            _finding(_upi_attribute_error_code(message), NONCOMPLIANT, message, "upi")
+            for message in upi_result.get("validation_errors", [])
+        ] + warnings
+
+    return [_finding("UPI_TEMPLATE_NOT_FOUND", NONCOMPLIANT, f"UPI template lookup status is {upi_result.get('status')}.", "upi")]
+
 def validate_lei(lei_value: Optional[str]) -> tuple[bool, str]:
     """
     Validate a Legal Entity Identifier using ISO 17442 / ISO 7064 MOD 97-10.
 
     Returns (is_valid, error_message), matching the assignment stub.
-    中文理解：检查 LEI 是否缺失、是否 20 位、校验位是否正确。
     """
     if _is_missing(lei_value):
         return False, "Missing LEI"
@@ -112,12 +243,10 @@ def validate_lei(lei_value: Optional[str]) -> tuple[bool, str]:
 
     return True, ""
 
-
 def gleif_lookup_enabled() -> bool:
-    # 默认关闭实时 API，避免网络不可用时影响基础作业运行。
-    # 需要加分演示时，在环境变量里设置 ENABLE_GLEIF_LOOKUP=true。
+    # Disabled by default so network availability does not affect the baseline
+    # assignment run. Set ENABLE_GLEIF_LOOKUP=true to enable this extension.
     return os.getenv(GLEIF_LOOKUP_ENV, "").lower() in {"1", "true", "yes", "on"}
-
 
 def lookup_lei_gleif(lei_value: Optional[str], timeout: float = 5.0) -> GleifLookupResult:
     """
@@ -126,9 +255,6 @@ def lookup_lei_gleif(lei_value: Optional[str], timeout: float = 5.0) -> GleifLoo
     This is an enrichment step, not the baseline LEI syntax/check-digit
     validation required by the assignment. It checks whether the LEI appears in
     the GLEIF reference data and extracts entity/registration statuses.
-
-    中文理解：这是可选加分项。基础 LEI 校验仍然用 python-stdnum；
-    这个函数额外联网查 GLEIF，确认 LEI 是否真实存在、状态是否 active。
     """
     if _is_missing(lei_value):
         return GleifLookupResult(lei="", status="INVALID_INPUT", error="Missing LEI")
@@ -175,19 +301,16 @@ def lookup_lei_gleif(lei_value: Optional[str], timeout: float = 5.0) -> GleifLoo
         error=error,
     )
 
-
 def validate_trade_leis(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
     # Trade-level wrapper: convert the assignment-style tuple result into
     # structured ComplianceFinding objects used by the pipeline output.
-    # 这是交易层面的包装函数：validate_lei() 只返回 True/False 和错误文字，
-    # 这里把它转换成 pipeline 需要的 ComplianceFinding 结构化错误。
     findings: List[ComplianceFinding] = []
 
     for field in ("reporting_counterparty_lei", "other_counterparty_lei"):
         value = raw_trade.get(field)
         is_valid, error_message = validate_lei(value)
         if not is_valid:
-            findings.append(_finding("INVALID_LEI", NONCOMPLIANT, f"{field}: {error_message}", field))
+            findings.append(_finding(_lei_error_code(error_message), NONCOMPLIANT, f"{field}: {error_message}", field))
             continue
 
         if gleif_lookup_enabled():
@@ -223,59 +346,6 @@ def validate_trade_leis(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
 
     return findings
 
-
-def validate_uti(uti: Optional[str], reporting_lei: Optional[str]) -> tuple[bool, str]:
-    """
-    Validate a UTI under ISO 23897-style rules used in the assignment.
-
-    Rules: max 52 chars, first 20 chars are a valid LEI namespace, namespace
-    equals the reporting counterparty LEI, and suffix is uppercase
-    alphanumeric/hyphen only.
-    中文理解：UTI 必须以前 20 位 reporting LEI 开头，后缀只能用大写字母、
-    数字和连字符，总长度不能超过 52。
-    """
-    if _is_missing(uti):
-        return False, "Missing UTI"
-
-    value = str(uti).strip()
-    if len(value) > 52:
-        return False, "UTI must not exceed 52 characters"
-    if len(value) <= 20:
-        return False, "UTI must contain a 20-character LEI namespace and a suffix"
-
-    namespace = value[:20]
-    suffix = value[20:]
-
-    namespace_valid, namespace_error = validate_lei(namespace)
-    if not namespace_valid:
-        return False, f"Invalid UTI namespace LEI: {namespace_error}"
-
-    if _is_missing(reporting_lei):
-        return False, "Cannot validate UTI namespace without reporting counterparty LEI"
-    if namespace != str(reporting_lei).strip():
-        return False, "UTI namespace LEI must match reporting counterparty LEI"
-
-    if not UTI_SUFFIX_RE.match(suffix):
-        return False, "UTI suffix must contain only A-Z, 0-9, and hyphen"
-
-    return True, ""
-
-
-def validate_trade_uti(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
-    # A valid UTI must be anchored to the reporting counterparty LEI.
-    # UTI 的 namespace 必须绑定到 reporting counterparty LEI。
-    is_valid, error_message = validate_uti(
-        raw_trade.get("uti"),
-        raw_trade.get("reporting_counterparty_lei"),
-    )
-    if is_valid:
-        return []
-
-    code = "MISSING_UTI" if error_message == "Missing UTI" else "INVALID_UTI"
-    return [_finding(code, NONCOMPLIANT, error_message, "uti")]
-
-
-
 def validate_timestamp(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
     value = raw_trade.get("execution_timestamp")
     if _is_missing(value):
@@ -288,6 +358,41 @@ def validate_timestamp(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
         return [_finding("INVALID_TIMESTAMP", NONCOMPLIANT, "execution_timestamp is not a real UTC timestamp.", "execution_timestamp")]
     return []
 
+def validate_required_fields(raw_trade: Dict[str, Any], regime: str) -> List[ComplianceFinding]:
+    findings: List[ComplianceFinding] = []
+    required_fields = EMIR_REQUIRED_FIELDS if regime == "EMIR" else CFTC_REQUIRED_FIELDS
+
+    for field in required_fields:
+        value = _trade_value(raw_trade, field)
+        if _is_missing(value):
+            if field == "maturity_or_expiry_date":
+                message = f"maturity_date or expiry_date is required for {regime}."
+            else:
+                message = f"{field} is required for {regime}."
+            findings.append(_finding(_required_field_code(field, regime), NONCOMPLIANT, message, field))
+
+    return findings
+
+def validate_date_order(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
+    effective_date = raw_trade.get("effective_date")
+    end_date = raw_trade.get("maturity_date") or raw_trade.get("expiry_date")
+    end_date_field = "maturity_date" if not _is_missing(raw_trade.get("maturity_date")) else "expiry_date"
+    if _is_missing(effective_date) or _is_missing(end_date):
+        return []
+
+    try:
+        effective = datetime.strptime(str(effective_date), "%Y-%m-%d")
+    except ValueError:
+        return [_finding("INVALID_EFFECTIVE_DATE", NONCOMPLIANT, "effective_date must be a real YYYY-MM-DD date.", "effective_date")]
+
+    try:
+        maturity = datetime.strptime(str(end_date), "%Y-%m-%d")
+    except ValueError:
+        return [_finding("INVALID_MATURITY_OR_EXPIRY_DATE", NONCOMPLIANT, f"{end_date_field} must be a real YYYY-MM-DD date.", end_date_field)]
+
+    if maturity < effective:
+        return [_finding("INVALID_DATE_ORDER", NONCOMPLIANT, f"{end_date_field} cannot be earlier than effective_date.", end_date_field)]
+    return []
 
 def validate_currency(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
     value = _trade_value(raw_trade, "notional_currency")
@@ -300,7 +405,6 @@ def validate_currency(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
     if pycountry.currencies.get(alpha_3=currency) is None:
         return [_finding("INVALID_CURRENCY", NONCOMPLIANT, f"{currency} is not a valid ISO 4217 currency code.", "notional_currency")]
     return []
-
 
 def validate_notional_amount(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
     value = _trade_value(raw_trade, "notional_amount")
@@ -316,29 +420,10 @@ def validate_notional_amount(raw_trade: Dict[str, Any]) -> List[ComplianceFindin
         return [_finding("INVALID_NOTIONAL_AMOUNT", NONCOMPLIANT, "notional_amount must be greater than zero.", "notional_amount")]
     return []
 
-
-def validate_date_order(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
-    effective_date = raw_trade.get("effective_date")
-    maturity_date = raw_trade.get("maturity_date")
-    if _is_missing(effective_date) or _is_missing(maturity_date):
-        return []
-
-    try:
-        effective = datetime.strptime(str(effective_date), "%Y-%m-%d")
-        maturity = datetime.strptime(str(maturity_date), "%Y-%m-%d")
-    except ValueError:
-        return []
-
-    if maturity < effective:
-        return [_finding("INVALID_DATE_ORDER", NONCOMPLIANT, "maturity_date cannot be earlier than effective_date.", "maturity_date")]
-    return []
-
-
 def validate_clearing_fields(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
     if raw_trade.get("cleared") is True and _is_missing(raw_trade.get("clearing_house")):
         return [_finding("MISSING_CLEARING_HOUSE", NONCOMPLIANT, "clearing_house is required when cleared is true.", "clearing_house")]
     return []
-
 
 def validate_asset_class_fields(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
     findings: List[ComplianceFinding] = []
@@ -353,67 +438,56 @@ def validate_asset_class_fields(raw_trade: Dict[str, Any]) -> List[ComplianceFin
 
     return findings
 
-
-def validate_required_fields(raw_trade: Dict[str, Any], regime: str) -> List[ComplianceFinding]:
-    findings: List[ComplianceFinding] = []
-    required_fields = EMIR_REQUIRED_FIELDS if regime == "EMIR" else CFTC_REQUIRED_FIELDS
-
-    for field in required_fields:
-        value = _trade_value(raw_trade, field)
-        if _is_missing(value):
-            if field == "maturity_or_expiry_date":
-                message = f"maturity_date or expiry_date is required for {regime}."
-            else:
-                message = f"{field} is required for {regime}."
-            findings.append(_finding("MISSING_REQUIRED_FIELD", NONCOMPLIANT, message, field))
-
-    return findings
-
-
-def validate_upi(raw_trade: Dict[str, Any], upi_result: Dict[str, Any]) -> List[ComplianceFinding]:
-    # For conventional derivatives, no product definition is a hard reporting
-    # problem. Event contracts never reach this function because they are
-    # scoped before normal OTC validation.
-    # 对普通 OTC 衍生品来说，找不到 UPI 产品定义是合规问题。
-    # 但 EventContract 会提前分流，所以不会因为没有 UPI taxonomy 被误判。
-    if not upi_result:
-        return [_finding("MISSING_UPI_LOOKUP_RESULT", NONCOMPLIANT, "UPI lookup result is missing.", "upi")]
-
-    warnings = [
-        _finding("UPI_WARNING", "WARNING", warning, "upi")
-        for warning in upi_result.get("warnings", [])
-    ]
-
-    if upi_result.get("status") == "FOUND":
-        return warnings
-
-    if upi_result.get("status") == "NO_PRODUCT_DEFINITION":
-        return [_finding("NO_PRODUCT_DEFINITION", NONCOMPLIANT, upi_result.get("classification_note") or "No UPI product definition.", "upi")]
-
-    if upi_result.get("status") == "FOUND_WITH_VALIDATION_ERRORS":
-        return [
-            _finding("UPI_ATTRIBUTE_VALIDATION_ERROR", NONCOMPLIANT, message, "upi")
-            for message in upi_result.get("validation_errors", [])
-        ] + warnings
-
-    return [_finding("UPI_TEMPLATE_NOT_FOUND", NONCOMPLIANT, f"UPI template lookup status is {upi_result.get('status')}.", "upi")]
-
-
 def _is_event_contract(raw_trade: Dict[str, Any], parsed_trade: Any = None) -> bool:
     # Module 1 flags T026-T028 as NOVEL_INSTRUMENT_NO_TAXONOMY, but the current
     # pipeline only passes raw_trade here. Support both signals for compatibility.
-    # Module 1 会把 T026-T028 标成 NOVEL_INSTRUMENT_NO_TAXONOMY。
-    # 但当前 pipeline 没把 parsed_trade 传进来，所以这里也直接看 raw_trade。
     if raw_trade.get("asset_class") == "EventContract":
         return True
     return getattr(parsed_trade, "classification_flag", None) == "NOVEL_INSTRUMENT_NO_TAXONOMY"
 
-
 def _is_cftc_dcm_event_contract(raw_trade: Dict[str, Any]) -> bool:
-    # CFTC DCM 平台上的 EventContract 在本作业里是 CONDITIONAL。
-    # 非 CFTC DCM 的 EventContract，例如 Polymarket，则是 NOT_APPLICABLE。
+    # EventContracts on a CFTC DCM are CONDITIONAL in this project; non-DCM
+    # event contracts such as Polymarket are NOT_APPLICABLE for CFTC OTC rules.
     return raw_trade.get("platform_type") == "CFTC_REGULATED_DCM"
 
+def _offshore_event_contract_findings(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
+    risk_factors = [
+        label
+        for field, value_labels in OFFSHORE_EVENT_RISK_FACTORS.items()
+        for value, label in value_labels.items()
+        if raw_trade.get(field) == value
+    ]
+
+    if not risk_factors:
+        return []
+
+    return [
+        _finding(
+            "EVENT_CONTRACT_OFFSHORE_ACCESS_RISK",
+            "INFO",
+            "EventContract is outside CFTC DCM reporting scope but presents regulatory perimeter risk: "
+            + ", ".join(risk_factors)
+            + ".",
+            "platform_type",
+        )
+    ]
+
+def _uncleared_cross_border_cds_findings(raw_trade: Dict[str, Any]) -> List[ComplianceFinding]:
+    if (
+        raw_trade.get("asset_class") == "Credit"
+        and raw_trade.get("instrument_type") == "Swap"
+        and raw_trade.get("counterparty_jurisdiction") == "US-EU_CROSS_BORDER"
+        and raw_trade.get("cleared") is False
+    ):
+        return [
+            _finding(
+                "UNCLEARED_CROSS_BORDER_CDS_REVIEW",
+                "WARNING",
+                "Cross-border CDS is reported as uncleared; review clearing obligation, bilateral margin, and collateral reporting requirements.",
+                "cleared",
+            )
+        ]
+    return []
 
 def _dedupe_findings(findings: List[ComplianceFinding]) -> List[ComplianceFinding]:
     seen = set()
@@ -426,7 +500,6 @@ def _dedupe_findings(findings: List[ComplianceFinding]) -> List[ComplianceFindin
         unique.append(finding)
     return unique
 
-
 def _check_conventional_derivative(
     raw_trade: Dict[str, Any],
     upi_result: Dict[str, Any],
@@ -434,8 +507,6 @@ def _check_conventional_derivative(
 ) -> ComplianceResult:
     # Only conventional OTC derivatives should reach this path. EventContract
     # trades are classification-frontier cases and are handled before this step.
-    # 只有传统 OTC 衍生品会进入这里。
-    # EventContract 是监管分类边界案例，必须先在 CFTC/EMIR 分支里处理。
     findings: List[ComplianceFinding] = []
 
     findings.extend(validate_required_fields(raw_trade, regime))
@@ -448,6 +519,8 @@ def _check_conventional_derivative(
     findings.extend(validate_clearing_fields(raw_trade))
     findings.extend(validate_asset_class_fields(raw_trade))
     findings.extend(validate_upi(raw_trade, upi_result))
+    if regime == "CFTC":
+        findings.extend(_uncleared_cross_border_cds_findings(raw_trade))
 
     findings = _dedupe_findings(findings)
     status = NONCOMPLIANT if any(finding.severity == NONCOMPLIANT for finding in findings) else COMPLIANT
@@ -458,7 +531,6 @@ def _check_conventional_derivative(
         status=status,
         findings=findings,
     )
-
 
 def check_cftc_compliance(parsed_trade: Any, upi_result: Dict[str, Any], raw_trade: Dict[str, Any]) -> ComplianceResult:
     """
@@ -485,22 +557,23 @@ def check_cftc_compliance(parsed_trade: Any, upi_result: Dict[str, Any], raw_tra
                 ],
             )
 
+        findings = [
+            _finding(
+                "EVENT_CONTRACT_CFTC_NOT_APPLICABLE",
+                "INFO",
+                "EventContract has no ANNA-DSB OTC UPI product definition; because it is not traded on a CFTC-regulated DCM, CFTC OTC reporting is NOT_APPLICABLE in this project.",
+                "asset_class",
+            )
+        ] + _offshore_event_contract_findings(raw_trade)
+
         return ComplianceResult(
             trade_id=str(raw_trade.get("trade_id", "UNKNOWN")),
             regime="CFTC",
             status=NOT_APPLICABLE,
-            findings=[
-                _finding(
-                    "EVENT_CONTRACT_CFTC_NOT_APPLICABLE",
-                    "INFO",
-                    "EventContract has no ANNA-DSB OTC UPI product definition; because it is not traded on a CFTC-regulated DCM, CFTC OTC reporting is NOT_APPLICABLE in this project.",
-                    "asset_class",
-                )
-            ],
+            findings=findings,
         )
 
     return _check_conventional_derivative(raw_trade, upi_result, "CFTC")
-
 
 def check_emir_compliance(parsed_trade: Any, upi_result: Dict[str, Any], raw_trade: Dict[str, Any]) -> ComplianceResult:
     """
@@ -527,7 +600,6 @@ def check_emir_compliance(parsed_trade: Any, upi_result: Dict[str, Any], raw_tra
 
     return _check_conventional_derivative(raw_trade, upi_result, "EMIR")
 
-
 def check_trade_for_regime(raw_trade: Dict[str, Any], upi_result: Dict[str, Any], regime: str) -> ComplianceResult:
     if regime == "CFTC":
         return check_cftc_compliance(None, upi_result, raw_trade)
@@ -547,7 +619,6 @@ def check_trade_for_regime(raw_trade: Dict[str, Any], upi_result: Dict[str, Any]
             )
         ],
     )
-
 
 def check_compliance(raw_trades: List[Dict[str, Any]], upi_results: List[Dict[str, Any]], regimes: List[str]) -> List[ComplianceResult]:
     upi_by_trade_id = {result["trade_id"]: result for result in upi_results}
