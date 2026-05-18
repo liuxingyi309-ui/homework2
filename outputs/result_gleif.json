@@ -1086,6 +1086,12 @@
       "status": "NONCOMPLIANT",
       "findings": [
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
           "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -1099,6 +1105,12 @@
       "status": "NONCOMPLIANT",
       "findings": [
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
           "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -1111,6 +1123,12 @@
       "regime": "CFTC",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "reporting_counterparty_lei"
+        },
         {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
@@ -1125,6 +1143,12 @@
       "status": "NONCOMPLIANT",
       "findings": [
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "reporting_counterparty_lei"
+        },
+        {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
           "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -1137,6 +1161,12 @@
       "regime": "CFTC",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "reporting_counterparty_lei"
+        },
         {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
@@ -1169,6 +1199,12 @@
           "field": "variation_margin_posted"
         },
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "reporting_counterparty_lei"
+        },
+        {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
           "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -1181,6 +1217,12 @@
       "regime": "CFTC",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "reporting_counterparty_lei"
+        },
         {
           "code": "INVALID_LEI_LENGTH",
           "severity": "NONCOMPLIANT",
@@ -1217,6 +1259,12 @@
           "severity": "NONCOMPLIANT",
           "message": "variation_margin_posted is required for EMIR.",
           "field": "variation_margin_posted"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "reporting_counterparty_lei"
         },
         {
           "code": "INVALID_LEI_LENGTH",
@@ -1242,6 +1290,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "UTI_NAMESPACE_LEI_INVALID",
@@ -1267,6 +1321,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "UTI_NAMESPACE_LEI_INVALID",
@@ -1292,6 +1352,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "MISSING_UTI",
@@ -1331,6 +1397,12 @@
           "field": "reporting_counterparty_lei"
         },
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "other_counterparty_lei"
+        },
+        {
           "code": "MISSING_UTI",
           "severity": "NONCOMPLIANT",
           "message": "Missing UTI",
@@ -1348,6 +1420,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "UTI_NAMESPACE_LEI_INVALID",
@@ -1385,6 +1463,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "UTI_NAMESPACE_LEI_INVALID",
@@ -1404,6 +1488,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "UTI_NAMESPACE_LEI_INVALID",
@@ -1429,6 +1519,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "UTI_NAMESPACE_LEI_INVALID",
@@ -1449,6 +1545,12 @@
       "regime": "CFTC",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "reporting_counterparty_lei"
+        },
         {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
@@ -1493,6 +1595,12 @@
           "field": "variation_margin_posted"
         },
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "reporting_counterparty_lei"
+        },
+        {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
           "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -1518,6 +1626,12 @@
       "status": "NONCOMPLIANT",
       "findings": [
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG",
+          "field": "reporting_counterparty_lei"
+        },
+        {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
           "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -1530,6 +1644,12 @@
       "regime": "EMIR",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG",
+          "field": "reporting_counterparty_lei"
+        },
         {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
@@ -1544,6 +1664,12 @@
       "status": "NONCOMPLIANT",
       "findings": [
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "reporting_counterparty_lei"
+        },
+        {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
           "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -1556,6 +1682,12 @@
       "regime": "EMIR",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "reporting_counterparty_lei"
+        },
         {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
@@ -1576,6 +1708,12 @@
           "field": "reporting_counterparty_lei"
         },
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "other_counterparty_lei"
+        },
+        {
           "code": "UTI_NAMESPACE_LEI_INVALID",
           "severity": "NONCOMPLIANT",
           "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -1593,6 +1731,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "UTI_NAMESPACE_LEI_INVALID",
@@ -1607,6 +1751,18 @@
       "regime": "CFTC",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG",
+          "field": "other_counterparty_lei"
+        },
         {
           "code": "INVALID_TIMESTAMP",
           "severity": "NONCOMPLIANT",
@@ -1626,6 +1782,18 @@
       "regime": "EMIR",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG",
+          "field": "other_counterparty_lei"
+        },
         {
           "code": "INVALID_TIMESTAMP",
           "severity": "NONCOMPLIANT",
@@ -1720,6 +1888,12 @@
           "field": "reporting_counterparty_lei"
         },
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "other_counterparty_lei"
+        },
+        {
           "code": "UTI_NAMESPACE_LEI_INVALID",
           "severity": "NONCOMPLIANT",
           "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -1739,6 +1913,12 @@
           "field": "reporting_counterparty_lei"
         },
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "other_counterparty_lei"
+        },
+        {
           "code": "UTI_NAMESPACE_LEI_INVALID",
           "severity": "NONCOMPLIANT",
           "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -1756,6 +1936,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "UTI_NAMESPACE_LEI_INVALID",
@@ -1793,6 +1979,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "UTI_NAMESPACE_LEI_INVALID",
@@ -1806,7 +1998,20 @@
       "trade_id": "T017",
       "regime": "CFTC",
       "status": "COMPLIANT",
-      "findings": []
+      "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG",
+          "field": "other_counterparty_lei"
+        }
+      ]
     },
     {
       "trade_id": "T017",
@@ -1830,6 +2035,18 @@
           "severity": "NONCOMPLIANT",
           "message": "variation_margin_posted is required for EMIR.",
           "field": "variation_margin_posted"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG",
+          "field": "other_counterparty_lei"
         }
       ]
     },
@@ -1838,6 +2055,12 @@
       "regime": "CFTC",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "reporting_counterparty_lei"
+        },
         {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
@@ -1857,6 +2080,12 @@
       "regime": "EMIR",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "reporting_counterparty_lei"
+        },
         {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
@@ -1881,6 +2110,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "UTI_NAMESPACE_LEI_INVALID",
@@ -1918,6 +2153,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "UTI_NAMESPACE_LEI_INVALID",
@@ -2001,6 +2242,18 @@
       "status": "NONCOMPLIANT",
       "findings": [
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "other_counterparty_lei"
+        },
+        {
           "code": "INVALID_MATURITY_OR_EXPIRY_DATE",
           "severity": "NONCOMPLIANT",
           "message": "maturity_date must be a real YYYY-MM-DD date.",
@@ -2032,6 +2285,18 @@
           "field": "variation_margin_posted"
         },
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "other_counterparty_lei"
+        },
+        {
           "code": "INVALID_MATURITY_OR_EXPIRY_DATE",
           "severity": "NONCOMPLIANT",
           "message": "maturity_date must be a real YYYY-MM-DD date.",
@@ -2051,6 +2316,12 @@
           "field": "reporting_counterparty_lei"
         },
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "other_counterparty_lei"
+        },
+        {
           "code": "UTI_NAMESPACE_LEI_INVALID",
           "severity": "NONCOMPLIANT",
           "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -2070,6 +2341,12 @@
           "field": "reporting_counterparty_lei"
         },
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "other_counterparty_lei"
+        },
+        {
           "code": "UTI_NAMESPACE_LEI_INVALID",
           "severity": "NONCOMPLIANT",
           "message": "Invalid UTI namespace LEI: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -2083,6 +2360,12 @@
       "status": "NONCOMPLIANT",
       "findings": [
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "reporting_counterparty_lei"
+        },
+        {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
           "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -2114,6 +2397,12 @@
           "field": "variation_margin_posted"
         },
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK",
+          "field": "reporting_counterparty_lei"
+        },
+        {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
           "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -2126,6 +2415,12 @@
       "regime": "CFTC",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG",
+          "field": "reporting_counterparty_lei"
+        },
         {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
@@ -2140,6 +2435,12 @@
       "status": "NONCOMPLIANT",
       "findings": [
         {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG",
+          "field": "reporting_counterparty_lei"
+        },
+        {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
           "message": "other_counterparty_lei: Invalid LEI: The number's checksum or check digit is invalid.",
@@ -2152,6 +2453,12 @@
       "regime": "CFTC",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "reporting_counterparty_lei"
+        },
         {
           "code": "INVALID_LEI_CHECK_DIGIT",
           "severity": "NONCOMPLIANT",
@@ -2182,6 +2489,12 @@
           "severity": "NONCOMPLIANT",
           "message": "variation_margin_posted is required for EMIR.",
           "field": "variation_margin_posted"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "reporting_counterparty_lei"
         },
         {
           "code": "INVALID_LEI_CHECK_DIGIT",
@@ -2343,6 +2656,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Missing LEI",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "MISSING_UTI",
@@ -2380,6 +2699,12 @@
           "severity": "NONCOMPLIANT",
           "message": "reporting_counterparty_lei: Missing LEI",
           "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "other_counterparty_lei"
         },
         {
           "code": "MISSING_UTI",
@@ -2394,6 +2719,18 @@
       "regime": "CFTC",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "other_counterparty_lei"
+        },
         {
           "code": "UPI_TEMPLATE_NOT_FOUND",
           "severity": "NONCOMPLIANT",
@@ -2407,6 +2744,18 @@
       "regime": "EMIR",
       "status": "NONCOMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "other_counterparty_lei"
+        },
         {
           "code": "UPI_TEMPLATE_NOT_FOUND",
           "severity": "NONCOMPLIANT",
@@ -2420,6 +2769,18 @@
       "regime": "CFTC",
       "status": "COMPLIANT",
       "findings": [
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "other_counterparty_lei"
+        },
         {
           "code": "UNCLEARED_CROSS_BORDER_CDS_REVIEW",
           "severity": "WARNING",
@@ -2450,6 +2811,18 @@
           "severity": "NONCOMPLIANT",
           "message": "variation_margin_posted is required for EMIR.",
           "field": "variation_margin_posted"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "reporting_counterparty_lei is active in GLEIF for INTERNATIONAL BUSINESS MACHINES CORPORATION",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "GLEIF_LEI_ACTIVE",
+          "severity": "INFO",
+          "message": "other_counterparty_lei is active in GLEIF for Bloomberg Finance L.P.",
+          "field": "other_counterparty_lei"
         }
       ]
     }

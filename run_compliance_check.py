@@ -12,7 +12,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", default="outputs/result.json", help="Output JSON path")
     parser.add_argument(
         "--product-definitions",
-        default="data/product_definitions",
+        default="data/Product-Definitions-master/Product-Definitions-master",
         help="Path to ANNA-DSB Product-Definitions repository",
     )
     return parser.parse_args()
