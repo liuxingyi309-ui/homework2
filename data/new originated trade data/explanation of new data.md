@@ -28,7 +28,7 @@ The following five trades (T029-T033) represent edge cases and intentional compl
 ### T030: Compliant Event Contract on CFTC DCM
 - **Asset Class:** EventContract
 - **Use Case:** SportsOutcome
-- **CFTC Status:** COMPLIANT
+- **CFTC Status:** CONDITIONAL
   - Traded on regulated DCM (Kalshi)
   - Full LEI and UTI provided
 - **EMIR Status:** NOT_APPLICABLE
@@ -67,7 +67,7 @@ The following five trades (T029-T033) represent edge cases and intentional compl
 | Trade | CFTC | EMIR | Primary Issue |
 |-------|------|------|---------------|
 | T029 | Noncompliant | Noncompliant | Missing LEI, UTI, and margin data |
-| T030 | Compliant | Not Applicable | Valid event contract on regulated platform |
+| T030 | Conditional | Not Applicable | Valid event contract on regulated platform |
 | T031 | Noncompliant | Noncompliant | Missing reporting identifiers |
 | T032 | Compliant | Noncompliant | Uncleared CDS with no margin |
 | T033 | Noncompliant | Noncompliant | Mandatory clearing + margin violations |
