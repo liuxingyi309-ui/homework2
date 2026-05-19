@@ -6,29 +6,27 @@
       "PARTIAL": 3
     },
     "classification_counts": {
-      "CONVENTIONAL_DERIVATIVE": 27,
-      "NOVEL_INSTRUMENT_NO_TAXONOMY": 5,
-      "CLASSIFICATION_AMBIGUOUS": 1
+      "CONVENTIONAL_DERIVATIVE": 29,
+      "NOVEL_INSTRUMENT_NO_TAXONOMY": 4
     },
     "upi_status_counts": {
       "FOUND": 26,
       "FOUND_WITH_VALIDATION_ERRORS": 1,
-      "NO_PRODUCT_DEFINITION": 5,
-      "SKIPPED_AMBIGUOUS_CLASSIFICATION": 1
+      "NO_PRODUCT_DEFINITION": 4,
+      "TEMPLATE_NOT_FOUND": 2
     },
     "compliance_status_counts": {
-      "CFTC:NONCOMPLIANT": 26,
-      "EMIR:NONCOMPLIANT": 28,
+      "CFTC:NONCOMPLIANT": 27,
+      "EMIR:NONCOMPLIANT": 29,
       "CFTC:COMPLIANT": 2,
       "CFTC:CONDITIONAL": 3,
-      "EMIR:NOT_APPLICABLE": 5,
-      "CFTC:NOT_APPLICABLE": 2
+      "EMIR:NOT_APPLICABLE": 4,
+      "CFTC:NOT_APPLICABLE": 1
     },
     "novel_instrument_trade_ids": [
       "T026",
       "T027",
       "T028",
-      "T029",
       "T030"
     ]
   },
@@ -628,48 +626,6 @@
     {
       "trade_id": "T029",
       "parse_status": "SUCCESS",
-      "asset_class": "EventContract",
-      "instrument_type": "BinaryEventContract",
-      "use_case": "ElectionOutcome",
-      "classification_flag": "NOVEL_INSTRUMENT_NO_TAXONOMY",
-      "parse_errors": [],
-      "classified_fields": {
-        "notional_currency": "USD",
-        "notional_amount": 80000,
-        "cleared": true,
-        "uti": "5493001KJTIIGC8Y1R1220260501EVT00029",
-        "upi": null,
-        "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
-        "other_counterparty_lei": null,
-        "execution_timestamp": "2026-05-01T10:00:00Z",
-        "effective_date": null,
-        "maturity_date": null
-      }
-    },
-    {
-      "trade_id": "T030",
-      "parse_status": "SUCCESS",
-      "asset_class": "EventContract",
-      "instrument_type": "BinaryEventContract",
-      "use_case": "RegulatoryCondition",
-      "classification_flag": "NOVEL_INSTRUMENT_NO_TAXONOMY",
-      "parse_errors": [],
-      "classified_fields": {
-        "notional_currency": "USDC",
-        "notional_amount": 120000,
-        "cleared": false,
-        "uti": null,
-        "upi": null,
-        "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
-        "other_counterparty_lei": null,
-        "execution_timestamp": "2026-05-02T11:00:00Z",
-        "effective_date": null,
-        "maturity_date": null
-      }
-    },
-    {
-      "trade_id": "T031",
-      "parse_status": "SUCCESS",
       "asset_class": "Rates",
       "instrument_type": "Swap",
       "use_case": "Fixed_Float",
@@ -689,30 +645,52 @@
       }
     },
     {
-      "trade_id": "T032",
+      "trade_id": "T030",
       "parse_status": "PARTIAL",
-      "asset_class": "Crypto",
-      "instrument_type": "Futures",
-      "use_case": "BTC-USD",
-      "classification_flag": "CLASSIFICATION_AMBIGUOUS",
+      "asset_class": "EventContract",
+      "instrument_type": "BinaryEventContract",
+      "use_case": "SportsOutcome",
+      "classification_flag": "NOVEL_INSTRUMENT_NO_TAXONOMY",
       "parse_errors": [
-        "Could not determine regulatory taxonomy classification"
+        "effective_date must be a valid YYYY-MM-DD date",
+        "maturity_date must be a valid YYYY-MM-DD date"
       ],
       "classified_fields": {
         "notional_currency": "USD",
-        "notional_amount": 250000,
+        "notional_amount": 50000,
         "cleared": true,
-        "uti": "5493001KJTIIGC8Y1R1220260504CRYP001",
+        "uti": "5493001KJTIIGC8Y1R1220260602EVT003",
         "upi": null,
         "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
-        "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
-        "execution_timestamp": "2026-05-04T14:00:00Z",
-        "effective_date": "2026-05-06",
-        "maturity_date": "2026-11-06"
+        "other_counterparty_lei": null,
+        "execution_timestamp": "2026-06-02T14:00:00Z",
+        "effective_date": null,
+        "maturity_date": null
       }
     },
     {
-      "trade_id": "T033",
+      "trade_id": "T031",
+      "parse_status": "SUCCESS",
+      "asset_class": "FX",
+      "instrument_type": "Forward",
+      "use_case": "EURUSD",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "EUR",
+        "notional_amount": 20000000,
+        "cleared": true,
+        "uti": null,
+        "upi": null,
+        "reporting_counterparty_lei": null,
+        "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+        "execution_timestamp": "2026-06-03T09:00:00Z",
+        "effective_date": "2026-06-05",
+        "maturity_date": "2026-09-05"
+      }
+    },
+    {
+      "trade_id": "T032",
       "parse_status": "SUCCESS",
       "asset_class": "Credit",
       "instrument_type": "Swap",
@@ -721,15 +699,36 @@
       "parse_errors": [],
       "classified_fields": {
         "notional_currency": "USD",
-        "notional_amount": 40000000,
+        "notional_amount": 100000000,
         "cleared": false,
-        "uti": "VGRQXHF3J8VDLUA7XE9220260505CDS002",
+        "uti": "VGRQXHF3J8VDLUA7XE9220260604CDS003",
         "upi": null,
         "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
         "other_counterparty_lei": "5493001KJTIIGC8Y1R12",
-        "execution_timestamp": "2026-05-05T16:00:00Z",
-        "effective_date": "2026-05-08",
-        "maturity_date": "2031-05-08"
+        "execution_timestamp": "2026-06-04T16:00:00Z",
+        "effective_date": "2026-06-06",
+        "maturity_date": "2031-06-06"
+      }
+    },
+    {
+      "trade_id": "T033",
+      "parse_status": "SUCCESS",
+      "asset_class": "Equity",
+      "instrument_type": "Swap",
+      "use_case": "IndexReturn",
+      "classification_flag": "CONVENTIONAL_DERIVATIVE",
+      "parse_errors": [],
+      "classified_fields": {
+        "notional_currency": "USD",
+        "notional_amount": 30000000,
+        "cleared": false,
+        "uti": "5299000J2N45DDNE4Y2820260605EQU001",
+        "upi": null,
+        "reporting_counterparty_lei": "5299000J2N45DDNE4Y28",
+        "other_counterparty_lei": "5493001KJTIIGC8Y1R12",
+        "execution_timestamp": "2026-06-05T11:00:00Z",
+        "effective_date": "2026-06-08",
+        "maturity_date": "2027-06-08"
       }
     }
   ],
@@ -1028,11 +1027,11 @@
     },
     {
       "trade_id": "T029",
-      "status": "NO_PRODUCT_DEFINITION",
-      "template_path": null,
-      "matched_template": null,
+      "status": "FOUND",
+      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Rates\\Rates.Swap.Fixed_Float.UPI.V1.json",
+      "matched_template": "Rates.Swap.Fixed_Float",
       "upi_code": null,
-      "classification_note": "Instrument type 'BinaryEventContract' under asset class 'EventContract' has no product definition in the ANNA-DSB OTC UPI taxonomy.",
+      "classification_note": null,
       "validation_errors": [],
       "warnings": []
     },
@@ -1048,34 +1047,36 @@
     },
     {
       "trade_id": "T031",
-      "status": "FOUND",
-      "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Rates\\Rates.Swap.Fixed_Float.UPI.V1.json",
-      "matched_template": "Rates.Swap.Fixed_Float",
+      "status": "TEMPLATE_NOT_FOUND",
+      "template_path": null,
+      "matched_template": "FX.Forward.EURUSD",
       "upi_code": null,
       "classification_note": null,
-      "validation_errors": [],
-      "warnings": []
-    },
-    {
-      "trade_id": "T032",
-      "status": "SKIPPED_AMBIGUOUS_CLASSIFICATION",
-      "template_path": null,
-      "matched_template": "Crypto.Futures.BTC-USD",
-      "upi_code": null,
-      "classification_note": "Cannot build UPI template name from incomplete classification fields.",
       "validation_errors": [
-        "Cannot build UPI template name from incomplete classification fields."
+        "Expected ANNA-DSB template was not found: FX.Forward.EURUSD.UPI.V1.json"
       ],
       "warnings": []
     },
     {
-      "trade_id": "T033",
+      "trade_id": "T032",
       "status": "FOUND",
       "template_path": "data\\Product-Definitions-master\\Product-Definitions-master\\PROD\\OTC-Products\\UPI\\Credit\\Credit.Swap.Corporate.UPI.V1.json",
       "matched_template": "Credit.Swap.Corporate",
       "upi_code": null,
       "classification_note": null,
       "validation_errors": [],
+      "warnings": []
+    },
+    {
+      "trade_id": "T033",
+      "status": "TEMPLATE_NOT_FOUND",
+      "template_path": null,
+      "matched_template": "Equity.Swap.IndexReturn",
+      "upi_code": null,
+      "classification_note": null,
+      "validation_errors": [
+        "Expected ANNA-DSB template was not found: Equity.Swap.IndexReturn.UPI.V1.json"
+      ],
       "warnings": []
     }
   ],
@@ -2278,64 +2279,6 @@
     {
       "trade_id": "T029",
       "regime": "CFTC",
-      "status": "CONDITIONAL",
-      "findings": [
-        {
-          "code": "EVENT_CONTRACT_CFTC_CONDITIONAL",
-          "severity": "INFO",
-          "message": "EventContract has no ANNA-DSB OTC UPI product definition; because it is traded on a CFTC-regulated DCM, CFTC treatment is CONDITIONAL pending classification.",
-          "field": "asset_class"
-        }
-      ]
-    },
-    {
-      "trade_id": "T029",
-      "regime": "EMIR",
-      "status": "NOT_APPLICABLE",
-      "findings": [
-        {
-          "code": "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
-          "severity": "INFO",
-          "message": "EventContract is treated as outside EMIR OTC derivative reporting scope due to gambling classification under European national frameworks; normal EMIR field validation is not applied.",
-          "field": "asset_class"
-        }
-      ]
-    },
-    {
-      "trade_id": "T030",
-      "regime": "CFTC",
-      "status": "NOT_APPLICABLE",
-      "findings": [
-        {
-          "code": "EVENT_CONTRACT_CFTC_NOT_APPLICABLE",
-          "severity": "INFO",
-          "message": "EventContract has no ANNA-DSB OTC UPI product definition; because it is not traded on a CFTC-regulated DCM, CFTC OTC reporting is NOT_APPLICABLE in this project.",
-          "field": "asset_class"
-        },
-        {
-          "code": "EVENT_CONTRACT_OFFSHORE_ACCESS_RISK",
-          "severity": "INFO",
-          "message": "EventContract is outside CFTC DCM reporting scope but presents regulatory perimeter risk: decentralised blockchain platform, offshore unregulated platform jurisdiction, VPN bypass of geo-blocking, USDC settlement.",
-          "field": "platform_type"
-        }
-      ]
-    },
-    {
-      "trade_id": "T030",
-      "regime": "EMIR",
-      "status": "NOT_APPLICABLE",
-      "findings": [
-        {
-          "code": "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
-          "severity": "INFO",
-          "message": "EventContract is treated as outside EMIR OTC derivative reporting scope due to gambling classification under European national frameworks; normal EMIR field validation is not applied.",
-          "field": "asset_class"
-        }
-      ]
-    },
-    {
-      "trade_id": "T031",
-      "regime": "CFTC",
       "status": "NONCOMPLIANT",
       "findings": [
         {
@@ -2353,7 +2296,7 @@
       ]
     },
     {
-      "trade_id": "T031",
+      "trade_id": "T029",
       "regime": "EMIR",
       "status": "NONCOMPLIANT",
       "findings": [
@@ -2390,33 +2333,107 @@
       ]
     },
     {
-      "trade_id": "T032",
+      "trade_id": "T030",
+      "regime": "CFTC",
+      "status": "CONDITIONAL",
+      "findings": [
+        {
+          "code": "EVENT_CONTRACT_CFTC_CONDITIONAL",
+          "severity": "INFO",
+          "message": "EventContract has no ANNA-DSB OTC UPI product definition; because it is traded on a CFTC-regulated DCM, CFTC treatment is CONDITIONAL pending classification.",
+          "field": "asset_class"
+        }
+      ]
+    },
+    {
+      "trade_id": "T030",
+      "regime": "EMIR",
+      "status": "NOT_APPLICABLE",
+      "findings": [
+        {
+          "code": "EVENT_CONTRACT_EMIR_NOT_APPLICABLE",
+          "severity": "INFO",
+          "message": "EventContract is treated as outside EMIR OTC derivative reporting scope due to gambling classification under European national frameworks; normal EMIR field validation is not applied.",
+          "field": "asset_class"
+        }
+      ]
+    },
+    {
+      "trade_id": "T031",
       "regime": "CFTC",
       "status": "NONCOMPLIANT",
       "findings": [
         {
+          "code": "MISSING_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei: Missing LEI",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "MISSING_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Missing UTI",
+          "field": "uti"
+        },
+        {
+          "code": "MISSING_CLEARING_HOUSE",
+          "severity": "NONCOMPLIANT",
+          "message": "clearing_house is required when cleared is true.",
+          "field": "clearing_house"
+        },
+        {
+          "code": "MISSING_ASSET_CLASS_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "underlying_currency_pair or settlement_currency is expected for asset_class=FX.",
+          "field": "underlying_currency_pair"
+        },
+        {
           "code": "UPI_TEMPLATE_NOT_FOUND",
           "severity": "NONCOMPLIANT",
-          "message": "UPI template lookup status is SKIPPED_AMBIGUOUS_CLASSIFICATION.",
+          "message": "UPI template lookup status is TEMPLATE_NOT_FOUND.",
+          "field": "upi"
+        }
+      ]
+    },
+    {
+      "trade_id": "T031",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_LEI",
+          "severity": "NONCOMPLIANT",
+          "message": "reporting_counterparty_lei: Missing LEI",
+          "field": "reporting_counterparty_lei"
+        },
+        {
+          "code": "MISSING_UTI",
+          "severity": "NONCOMPLIANT",
+          "message": "Missing UTI",
+          "field": "uti"
+        },
+        {
+          "code": "MISSING_CLEARING_HOUSE",
+          "severity": "NONCOMPLIANT",
+          "message": "clearing_house is required when cleared is true.",
+          "field": "clearing_house"
+        },
+        {
+          "code": "MISSING_ASSET_CLASS_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "underlying_currency_pair or settlement_currency is expected for asset_class=FX.",
+          "field": "underlying_currency_pair"
+        },
+        {
+          "code": "UPI_TEMPLATE_NOT_FOUND",
+          "severity": "NONCOMPLIANT",
+          "message": "UPI template lookup status is TEMPLATE_NOT_FOUND.",
           "field": "upi"
         }
       ]
     },
     {
       "trade_id": "T032",
-      "regime": "EMIR",
-      "status": "NONCOMPLIANT",
-      "findings": [
-        {
-          "code": "UPI_TEMPLATE_NOT_FOUND",
-          "severity": "NONCOMPLIANT",
-          "message": "UPI template lookup status is SKIPPED_AMBIGUOUS_CLASSIFICATION.",
-          "field": "upi"
-        }
-      ]
-    },
-    {
-      "trade_id": "T033",
       "regime": "CFTC",
       "status": "COMPLIANT",
       "findings": [
@@ -2429,6 +2446,50 @@
       ]
     },
     {
+      "trade_id": "T032",
+      "regime": "EMIR",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_EMIR_MARGIN_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "collateral_portfolio_code is required for EMIR.",
+          "field": "collateral_portfolio_code"
+        },
+        {
+          "code": "MISSING_EMIR_MARGIN_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "initial_margin_posted is required for EMIR.",
+          "field": "initial_margin_posted"
+        },
+        {
+          "code": "MISSING_EMIR_MARGIN_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "variation_margin_posted is required for EMIR.",
+          "field": "variation_margin_posted"
+        }
+      ]
+    },
+    {
+      "trade_id": "T033",
+      "regime": "CFTC",
+      "status": "NONCOMPLIANT",
+      "findings": [
+        {
+          "code": "MISSING_ASSET_CLASS_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "underlying_isin or underlying_index is expected for asset_class=Equity.",
+          "field": "underlying_isin"
+        },
+        {
+          "code": "UPI_TEMPLATE_NOT_FOUND",
+          "severity": "NONCOMPLIANT",
+          "message": "UPI template lookup status is TEMPLATE_NOT_FOUND.",
+          "field": "upi"
+        }
+      ]
+    },
+    {
       "trade_id": "T033",
       "regime": "EMIR",
       "status": "NONCOMPLIANT",
@@ -2450,6 +2511,18 @@
           "severity": "NONCOMPLIANT",
           "message": "variation_margin_posted is required for EMIR.",
           "field": "variation_margin_posted"
+        },
+        {
+          "code": "MISSING_ASSET_CLASS_FIELD",
+          "severity": "NONCOMPLIANT",
+          "message": "underlying_isin or underlying_index is expected for asset_class=Equity.",
+          "field": "underlying_isin"
+        },
+        {
+          "code": "UPI_TEMPLATE_NOT_FOUND",
+          "severity": "NONCOMPLIANT",
+          "message": "UPI template lookup status is TEMPLATE_NOT_FOUND.",
+          "field": "upi"
         }
       ]
     }

@@ -30,7 +30,7 @@ This is the file to use as the baseline compliance report for submission. It is 
 - Built the modular pipeline connecting parsing, UPI template lookup, compliance checking and JSON report generation.
 - Module 1 parses all 33 trades: the original 28 records plus five additional designed trades.
 - Conventional derivatives are classified as `CONVENTIONAL_DERIVATIVE`.
-- EventContract trades T026 to T030 are classified as `NOVEL_INSTRUMENT_NO_TAXONOMY`.
+- EventContract trades T026, T027, T028, and T030 are classified as `NOVEL_INSTRUMENT_NO_TAXONOMY`.
 - Invalid timestamps, dates and ambiguous taxonomies are reported without stopping the pipeline.
 - Module 2 matches conventional trades to ANNA-DSB UPI templates and returns `NO_PRODUCT_DEFINITION` for EventContract trades.
 
@@ -49,8 +49,8 @@ Module 3 is implemented in `src/compliance_checker.py`. The validation layer per
   currency codes, notional amount, clearing fields, EMIR collateral/margin
   fields and UPI lookup results.
 - EventContract branching before normal OTC derivative validation:
-  - T026, T028, and T029: CFTC `CONDITIONAL`, EMIR `NOT_APPLICABLE`
-  - T027 and T030: CFTC `NOT_APPLICABLE`, EMIR `NOT_APPLICABLE`
+  - T026, T028, and T030: CFTC `CONDITIONAL`, EMIR `NOT_APPLICABLE`
+  - T027: CFTC `NOT_APPLICABLE`, EMIR `NOT_APPLICABLE`
 - EMIR collateral and margin field checks, including zero-value margin reporting.
 - Warning-level findings for review items such as historical reference rates,
   ANNA-DSB value normalisation, offshore EventContract access risk, and uncleared
@@ -60,13 +60,24 @@ Optional live GLEIF LEI lookup is available as an extension. It is disabled by
 default so the baseline engine remains reproducible without network access. To
 generate the optional enriched report:
 
-```bash
-ENABLE_GLEIF_LOOKUP=true python run_compliance_check.py --input trades.json --regimes CFTC,EMIR --output outputs/result_gleif.json
+```powershell
+$env:ENABLE_GLEIF_LOOKUP="true"
+python run_compliance_check.py --input trades.json --regimes CFTC,EMIR --output outputs/result_gleif.json
 ```
 
 `outputs/result_gleif.json` adds GLEIF active-status findings for LEIs that pass
 local syntax and check-digit validation. Because it depends on external API
 availability, it is not used as the baseline reproducible report.
+
+To check whether the live lookup succeeded, search the enriched report for:
+
+```text
+GLEIF_LEI_ACTIVE
+```
+
+If the local environment blocks external API access, the report may instead
+contain `GLEIF_LOOKUP_UNAVAILABLE`; this does not affect the baseline
+`outputs/result.json` report.
 
 ## UPI Scope Note
 
