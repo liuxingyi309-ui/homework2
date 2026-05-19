@@ -1,6 +1,6 @@
 # MH6822 OTC Derivatives Compliance Engine
 
-This repository contains a Python compliance engine for Homework 2. It reads a portfolio of OTC derivative trade records, classifies each trade, performs ANNA-DSB template lookup, and checks CFTC and EMIR reporting compliance.
+This repository contains a Python compliance engine for Homework 2. It reads a portfolio of OTC derivative trade records, classifies each trade, performs ANNA-DSB template lookup, and checks CFTC and EMIR reporting compliance. Please check our recorded presentation via: https://drive.google.com/file/d/1rUgkQRpBxTOE6cjH49UAAfMAKuyEj940/view?usp=sharing
 
 ## Quick Start
 
