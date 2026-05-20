@@ -1,6 +1,18 @@
 # MH6822 OTC Derivatives Compliance Engine
 
-This repository contains a Python compliance engine for Homework 2. It reads a portfolio of OTC derivative trade records, classifies each trade, performs ANNA-DSB template lookup, and checks CFTC and EMIR reporting compliance. Please check our recorded presentation via: https://drive.google.com/file/d/1rUgkQRpBxTOE6cjH49UAAfMAKuyEj940/view?usp=sharing
+## Team Members
+
+| Name | Matriculation Number | Email Address | Role |
+|---|---|---|---|
+| LIU XINGYI | G2505354D | LIUX0181@e.ntu.edu.sg | Engineer |
+| ZHEN JINGWEN | G2508036E | zhen0168@e.ntu.edu.sg | Validation Specialist |
+| WEI QINGYI | G2505372F | qingyi001@e.ntu.edu.sg | Domain Expert |
+| XU ZHUOJIA | G2506964F | XUZH0032@e.ntu.edu.sg | Researcher |
+
+This repository contains a Python compliance engine for Homework 2. It reads a portfolio of OTC derivative trade records, classifies each trade, performs ANNA-DSB template lookup, and checks CFTC and EMIR reporting compliance. 
+
+## Recorded Presentation Video
+https://drive.google.com/file/d/1rUgkQRpBxTOE6cjH49UAAfMAKuyEj940/view?usp=sharing
 
 ## Quick Start
 
